@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang='en' ng-app="">
+<head>
+    <meta charset="utf-8" />
+    <title>AngularJS | Directives</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js">
+    </script>
+</head>
+<body>
+    <textarea ng-model="name"></textarea>  <!-- Preferred -->
+    <div data-ng-bind="name"></div>  <!-- Preferred in production code -->
+    <div x-ng-bind="name"></div>
+    <div ng:bind="name"></div>
+    <div ng_bind="name"></div>
+</body>
+</html>
