@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<html style="height: 100%;"><head>
+	<title>AngularJS ui-router  - CodeProject</title> 
+	<link type="text/css" rel="stylesheet" href="AngularJS%20ui-router%20-%20CodeProject_files/Main.css">
+<link type="text/css" rel="stylesheet" href="AngularJS%20ui-router%20-%20CodeProject_files/no-media-query.css">
+
+	
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Description" content="Create simple ui-router using AngularJS; Author: KameshKannan; Updated: 13 Nov 2014; Section: Applications &amp; Tools; Chapter: Web Development; Updated: 13 Nov 2014">
+<meta name="Keywords" content="AngularJS,Applications &amp; Tools,Web Development,Free source code, tutorials">
+<meta name="Author" content="KameshKannan">
+<meta name="Rating" content="General">
+<meta name="Revisit-After" content="1 days">
+<meta name="application-name" content="CodeProject">
+<meta name="google-translate-customization" content="d908bb7ce7aff658-4c2f3a504525c916-g629383f736781a8a-13">
+
+<link rel="dns-prefetch" href="http://ajax.googleapis.com/"> 
+
+
+
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - All Topics" href="http://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=1">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - Android" href="http://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=22">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - iOS" href="http://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=25">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - C++" href="http://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=2">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - C#" href="http://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=3">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - Web" href="http://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=23">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Lounge Postings" href="http://www.codeproject.com/webservices/LoungeRSS.aspx">
+<meta name="robots" content="index, follow">
+<link rel="search" type="application/opensearchdescription+xml" title="CodeProject" href="http://www.codeproject.com/info/OpenSearch.xml">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- base href="http://www.codeproject.com/Articles/841776/AngularJS-ui-router" -->
+	<link rel="icon" href="http://www.codeproject.com/favicon.ico" type="image/ico">
+<link rel="shortcut icon" href="http://www.codeproject.com/favicon.ico" type="image/ico">
+<link rel="apple-touch-icon" href="http://www.codeproject.com/images/FavIcon-Apple.png" type="image/png">
+<script src="AngularJS%20ui-router%20-%20CodeProject_files/osd.js"></script><script src="AngularJS%20ui-router%20-%20CodeProject_files/gpt.js" type="text/javascript" async=""></script><script type="text/javascript" language="Javascript" src="AngularJS%20ui-router%20-%20CodeProject_files/jquery.js"></script><script type="text/javascript">//<![CDATA[
+if (typeof jQuery == 'undefined') {
+    document.write(unescape("%3Cscript src='/script/JS/jquery-1.6.2.min.js' type='text/javascript' %3E%3C/script%3E"));
+}//]]></script>
+<script type="text/javascript" language="Javascript">//<![CDATA[
+function defrm () { /* thanks twitter */ document.write = ''; window.top.location = window.self.location;  setTimeout(function() { document.body.innerHTML = ''; }, 0);  window.self.onload = function(evt) { document.body.innerHTML = ''; }; }if (window.top !== window.self) {  try {  if (window.top.location.host) { /* will throw */ } else { defrm(); /* chrome */ }  } catch (ex) { defrm(); /* everyone else */ } }if (typeof(DemoUrl)!='undefined')   document.write(unescape('%3Cme')+'ta http'+'-equiv="re'+'fresh"                  con'+'tent="1;url='+DemoUrl+unescape('"%3CE'));
+(function() { 
+	var _dma = document.createElement('script');
+        _dma.type = 'text/javascript';
+        _dma.async = true;
+        _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn2.developermedia.com/a.min.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+})();
+
+//]]>
+</script><script src="AngularJS%20ui-router%20-%20CodeProject_files/a.js" async="" type="text/javascript"></script>
+
+	
+
+
+
+
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-1735123-1']);
+	_gaq.push(['_trackPageview']);
+	_gaq.push(['_setDomainName', 'www.codeproject.com']);
+	_gaq.push(['_setSessionTimeout', '1200']); 
+
+	(function () {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+	})(); 
+</script><script src="AngularJS%20ui-router%20-%20CodeProject_files/ga.js" async="" type="text/javascript"></script>
+
+
+<script async="" src="AngularJS%20ui-router%20-%20CodeProject_files/pubads_impl_88.js"></script><link href="AngularJS%20ui-router%20-%20CodeProject_files/translateelement.css" charset="UTF-8" rel="stylesheet" type="text/css"><script src="AngularJS%20ui-router%20-%20CodeProject_files/main.js" charset="UTF-8" type="text/javascript"></script><link href="http://tpc.googlesyndication.com/safeframe/1-0-2/html/container.html" rel="prefetch"><script src="AngularJS%20ui-router%20-%20CodeProject_files/element_main.js" charset="UTF-8" type="text/javascript"></script></head>	
+
+<body style="position: relative; min-height: 100%; top: 0px;" class="firefox firefox0">
+
+<a class="access-link" href="#Main"><img alt="Click here to Skip to main content" src="AngularJS%20ui-router%20-%20CodeProject_files/t_002.gif"></a>
+
+
+
+
+
+<div class="page-background">
+
+	
+	
+
+	
+
+	
+    <div id="ctl00_STM" class="site-top-menu fixed">
+        <div class="main-content">
+            
+
+<div class="container memberbar clearfix">
+
+	<div id="ctl00_MemberMenu_GenInfo" class="float-left">12,313,816 members (61,555 online)</div>
+
+	<div class="float-left">
+		
+	</div>
+
+	<div class="float-right">
+
+		
+
+		
+
+		
+
+			<script type="text/javascript">//<!--
+			function doSubmit(secure)
+			{
+				if (secure)
+					document.subForm.action = "https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f841776%2fAngularJS-ui-router"
+				else
+					document.subForm.action = "https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f841776%2fAngularJS-ui-router"
+				document.subForm.submit();
+				return true;
+			}//-->
+			</script>
+
+			<a name="SignUp"></a>
+			<span class="member-signin tooltip">
+				<span><a href="https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f841776%2fAngularJS-ui-router">Sign in</a></span>
+
+				<div class="tooltip-flyout">
+					<form name="subForm" id="subForm" action="https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f841776%2fAngularJS-ui-router" method="post" class="tight">
+
+						
+						<input id="FormName" name="FormName" value="MenuBarForm" type="hidden">
+
+						<div>Email</div>
+						<div><input class="small-text" name="Email" id="Email" type="email"></div>
+						<div>Password</div>
+						<div><input class="small-text" name="Password" id="Password" type="password"></div>
+						<div class="action">
+							
+<script type="text/javascript">
+function Join(){
+ var url = 'http://www.codeproject.com/script/Membership/Modify.aspx?meml=' + document.subForm.Email.value;
+ document.location.href=url;return false;
+}
+document.write('<input type="button" class="create" onclick="return Join();" value="Join"');
+document.write('<input type="hidden" name="fld_quicksign" value="true" />');
+</script><input class="create" onclick="return Join();" value="Join" <input="" name="fld_quicksign" type="button">
+							<input value="Sign in" class="signin" onclick="return doSubmit(false);" type="submit">
+						</div>
+
+						<div class="container">
+							
+							&nbsp;
+							<a id="ctl00_MemberMenu_SendPassword" class="forgot float-right" href="http://www.codeproject.com/script/Membership/SendPassword.aspx?rp=%2fArticles%2f841776%2fAngularJS-ui-router">Forgot your password?</a>
+						</div>
+					</form>
+
+					<hr class="divider-dark">
+
+					Sign in using <a class="oauth" title="Sign in using Facebook" href="http://www.codeproject.com/script/Membership/OAuthLogOn.aspx?auth=Facebook"><img src="AngularJS%20ui-router%20-%20CodeProject_files/facebook.png" style="vertical-align:middle;padding-right:3px;border:0;"></a>
+<a class="oauth" title="Sign in using Google" href="http://www.codeproject.com/script/Membership/OAuthLogOn.aspx?auth=Google"><img src="AngularJS%20ui-router%20-%20CodeProject_files/google-plus.png" style="vertical-align:middle;padding-right:3px;border:0;"></a>
+<a class="oauth" title="Sign in using Linkedin" href="http://www.codeproject.com/script/Membership/OAuthLogOn.aspx?auth=LinkedIn"><img src="AngularJS%20ui-router%20-%20CodeProject_files/linkedin.png" style="vertical-align:middle;padding-right:3px;border:0;"></a>
+<a class="oauth" title="Sign in using Microsoft" href="http://www.codeproject.com/script/Membership/OAuthLogOn.aspx?auth=Microsoft"><img src="AngularJS%20ui-router%20-%20CodeProject_files/microsoft.png" style="vertical-align:middle;padding-right:3px;border:0;"></a>
+
+				</div>
+            </span>
+		
+	</div>
+</div>
+        </div>
+    </div>
+
+	
+    <div id="ctl00_SH" class="site-header fixed">
+        <div class="main-content">
+            <div class="logo"><a href="http://www.codeproject.com/"><img id="ctl00_Logo" tabindex="1" title="CodeProject" src="AngularJS%20ui-router%20-%20CodeProject_files/logo250x135.gif" alt="Home" style="height:135px;width:250px;border-width:0px;"></a></div>
+            <div class="promo"><div class="msg-728x90" data-format="728x90" data-type="ad" data-publisher="lqm.codeproject.site" data-zone="Web-Development/Applications-Tools/General" data-tags="AngularJS,rating4.5"><noscript><a href="http://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/Web-Development/Applications-Tools/General&sz=728x90&c=454754"><img src="http://pubads.g.doubleclick.net/gampad/ad?iu=/6839/lqm.codeproject.site/Web-Development/Applications-Tools/General&sz=728x90&c=454754"  width="728px" height="90px" target="_blank"/></a></noscript><div id="div-gpt-ad-lqm.codeproject.site/web-development/applications-tools/general-1" style="height: 90px; width: 728px; box-sizing: border-box; border: 0px none; font-size: 0px;"><div style="border: 0pt none;" id="google_ads_iframe_/6839/lqm.codeproject.site/web-development/applications-tools/general_0__container__"><iframe src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;" style="border: 0px none; vertical-align: bottom;" marginheight="0" marginwidth="0" scrolling="no" name="google_ads_iframe_/6839/lqm.codeproject.site/web-development/applications-tools/general_0" title="3rd party ad content" id="google_ads_iframe_/6839/lqm.codeproject.site/web-development/applications-tools/general_0" frameborder="0" height="90" width="728"></iframe></div><iframe src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;" style="border: 0px none; vertical-align: bottom; visibility: hidden; display: none;" marginheight="0" marginwidth="0" scrolling="no" name="google_ads_iframe_/6839/lqm.codeproject.site/web-development/applications-tools/general_0__hidden__" title="" id="google_ads_iframe_/6839/lqm.codeproject.site/web-development/applications-tools/general_0__hidden__" frameborder="0" height="0" width="0"></iframe></div></div></div>
+        </div>
+    </div>
+
+	<a href="#Main"><img alt="Click here to Skip to main content" class="access-link" src="AngularJS%20ui-router%20-%20CodeProject_files/t_002.gif"></a>
+
+	
+	<div id="ctl00_TPR" class="sub-headerbar clearfix fixed">
+    <div class="float-right">
+		
+
+<div class="searchbar">
+
+<form method="get" action="/search.aspx?sbo=kw" name="Search" class="tight">
+
+
+<table class="search" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td><input tabindex="2" class="search  subdue" id="sb_tb" value="Search for articles, questions, tips" name="q"></td><td><input src="AngularJS%20ui-router%20-%20CodeProject_files/search.gif" type="image"></td></tr></tbody></table>
+
+<div class="hover-container">
+	<div style="display: none;" id="SearchFilter" class="search-advanced small-text align-left">
+	<b>Search within:<br></b>
+		
+		<input id="sb_kw" name="sbo" value="kw" checked="checked" type="radio"><label for="sb_kw">Articles</label><br>
+<input id="sb_qa" name="sbo" value="qa" type="radio"><label for="sb_qa">Quick Answers</label><br>
+<input id="sb_fm" name="sbo" value="fm" type="radio"><label for="sb_fm">Messages</label><br>
+
+
+		
+		
+
+		
+		
+	</div>
+</div>
+</form>
+
+</div>
+    </div>
+    <div class="float-left">
+		
+
+<div class="navbar clearfix">
+<ul class="navmenu openable">
+
+<li class="desktop-only"><a id="ctl00_TopNavBar_Home" href="http://www.codeproject.com/">home</a>
+
+
+</li><li class=""><a id="ctl00_TopNavBar_Art" class="down selected" href="http://www.codeproject.com/script/Articles/Latest.aspx">articles</a>
+
+	<ul>
+		<li class=""><a id="ctl00_TopNavBar_ArtTopicList" class="fly" onmouseover="navBarMenu.ShowMap(this, 'ctl00_TopNavBar_MapFlyout');" href="http://www.codeproject.com/script/Content/SiteMap.aspx">Chapters and Sections<span class="has-submenu">&gt;</span></a><ul id="ctl00_TopNavBar_MapFlyout">
+			<li>
+				<div id="siteMap">
+					<img src="AngularJS%20ui-router%20-%20CodeProject_files/animated.gif" alt="loading" style="margin:150px;width:100px;height:100px;">
+				</div>
+			</li>
+			</ul>
+		</li>
+		<li><a id="ctl00_TopNavBar_ArtSearch" class="fly break" href="http://www.codeproject.com/search.aspx?sbo=kw">Search</a></li>
+		<li><a id="ctl00_TopNavBar_ArtLatestArts" class="fly" href="http://www.codeproject.com/script/Articles/Latest.aspx?at=1,3,7">Latest Articles</a></li>
+		<li><a id="ctl00_TopNavBar_ArtLatestTips" class="fly" href="http://www.codeproject.com/script/Articles/Latest.aspx?at=6">Latest Tips/Tricks</a></li>
+		<li><a id="ctl00_TopNavBar_ArtTop" class="fly" href="http://www.codeproject.com/script/Articles/TopArticles.aspx?ta_so=5">Top Articles</a></li>
+		<li><a id="ctl00_TopNavBar_ArtBeginner" class="fly" href="http://www.codeproject.com/search.aspx?sbo=kw?aidlst=152&amp;sa_us=True">Beginner Articles</a></li>
+		<li><a id="ctl00_TopNavBar_ArtBlogArticles" class="fly break" href="http://www.codeproject.com/script/Articles/BlogArticleList.aspx">Technical Blogs</a></li>
+		<li><a id="ctl00_TopNavBar_ArtGuide" class="fly" href="http://www.codeproject.com/info/Submit.aspx">Posting/Update Guidelines</a></li>
+		<li><a id="ctl00_TopNavBar_ArtHelpForum" class="fly" href="http://www.codeproject.com/Forums/1641/Article-Writing.aspx">Article Help Forum</a></li>
+		<li><a id="ctl00_TopNavBar_ArtCompetition" class="fly break" href="http://www.codeproject.com/script/Awards/CurrentCompetitions.aspx?cmpTpId=1">Article Competition</a></li>
+		<li><a id="ctl00_TopNavBar_ArtPostArticle" class="fly highlight1" href="http://www.codeproject.com/script/Articles/Submit.aspx">
+			<img src="AngularJS%20ui-router%20-%20CodeProject_files/write13.png" height="13px" width="13px"> Submit an article or tip
+			</a></li>
+		<li><a id="ctl00_TopNavBar_ArtPostBlog" class="fly highlight2" href="http://www.codeproject.com/script/Articles/BlogFeed.aspx">
+			<img src="AngularJS%20ui-router%20-%20CodeProject_files/write13.png" height="13px" width="13px"> Post your Blog
+			</a></li>		<li class="last"></li>
+	</ul>
+
+</li>
+
+
+
+<li class="">
+<a id="ctl00_TopNavBar_Answers" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active">
+    <span class="desktop-only tablet-only">quick answers</span><span class="mobile-only">Q&amp;A</span>
+</a>
+	<ul>
+		<li id="ctl00_TopNavBar_AQL"><a id="ctl00_TopNavBar_ArticleQuestion" class="fly highlight1" href="#_comments">
+			<img src="AngularJS%20ui-router%20-%20CodeProject_files/write13.png" height="13px" width="13px"> Ask a Question about this 
+			article</a>
+		</li>
+
+		<li><a id="ctl00_TopNavBar_QAAsk" class="fly highlight2" href="http://www.codeproject.com/Questions/ask.aspx"><img src="AngularJS%20ui-router%20-%20CodeProject_files/write13.png" height="13px" width="13px"> Ask a Question</a></li>
+
+		
+		<li><a id="ctl00_TopNavBar_QAUnanswered" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=unanswered">View Unanswered Questions</a></li>
+		<li><a id="ctl00_TopNavBar_QALatest" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active">View All Questions...</a></li>
+		
+				<li><a id="ctl00_TopNavBar_QATR_ctl00_Tag" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=81" style="padding-left:30px">C# questions</a></li>
+			
+				<li><a id="ctl00_TopNavBar_QATR_ctl01_Tag" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=85" style="padding-left:30px">ASP.NET questions</a></li>
+			
+				<li><a id="ctl00_TopNavBar_QATR_ctl02_Tag" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=93" style="padding-left:30px">SQL questions</a></li>
+			
+				<li><a id="ctl00_TopNavBar_QATR_ctl03_Tag" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=842" style="padding-left:30px">VB.NET questions</a></li>
+			
+				<li><a id="ctl00_TopNavBar_QATR_ctl04_Tag" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=87" style="padding-left:30px">Javascript questions</a></li>
+			
+		<li class="last"></li>
+	</ul>
+
+</li>
+
+
+
+<li class=""><a id="ctl00_TopNavBar_Forums" href="http://www.codeproject.com/script/Forums/List.aspx">
+        <span class="desktop-only tablet-only">discussions</span><span class="mobile-only">forums</span>
+</a>
+
+	<ul>
+		<li><a id="ctl00_TopNavBar_MessageBoardsAll" class="fly" href="http://www.codeproject.com/script/Forums/List.aspx">All Message Boards...</a></li>
+		<li class=""><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1580997/Application-Lifecycle.aspx">Application Lifecycle<span class="has-submenu">&gt;</span></a>
+<ul class="openable"><li><a class="fly" href="http://www.codeproject.com/Forums/1533717/Running-a-Business.aspx">Running a Business</a></li>
+<li><a class="fly" href="http://www.codeproject.com/Forums/1533716/Sales-Marketing.aspx">Sales / Marketing</a></li>
+<li><a class="fly" href="http://www.codeproject.com/Forums/1651/Collaboration-Beta-Testing.aspx">Collaboration / Beta Testing</a></li>
+<li><a class="fly" href="http://www.codeproject.com/Forums/3304/Work-Issues.aspx">Work  Issues</a></li>
+</ul></li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/369270/Design-and-Architecture.aspx">Design and Architecture</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/12076/ASP-NET.aspx">ASP.NET</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1580226/JavaScript.aspx">JavaScript</a>
+</li>
+<li class=""><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1647/C-Cplusplus-MFC.aspx">C / C++ / MFC<span class="has-submenu">&gt;</span></a>
+<ul class="openable"><li><a class="fly" href="http://www.codeproject.com/Forums/4486/ATL-WTL-STL.aspx">ATL /  WTL / STL</a></li>
+<li><a class="fly" href="http://www.codeproject.com/Forums/3785/Managed-Cplusplus-CLI.aspx">Managed C++/CLI</a></li>
+</ul></li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1649/Csharp.aspx">C#</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1627782/Free-Tools.aspx">Free Tools</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1827460/Objective-C-and-Swift.aspx">Objective-C and Swift</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1725/Database.aspx">Database</a>
+</li>
+<li class=""><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/186301/Hardware-Devices.aspx">Hardware &amp; Devices<span class="has-submenu">&gt;</span></a>
+<ul class="openable"><li><a class="fly" href="http://www.codeproject.com/Forums/1644/System-Admin.aspx">System Admin</a></li>
+</ul></li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1606152/Hosting-and-Servers.aspx">Hosting and Servers</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1643/Java.aspx">Java</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1650/NET-Framework.aspx">.NET Framework</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1848626/Android.aspx">Android</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1876716/iOS.aspx">iOS</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/13695/Mobile.aspx">Mobile</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1540733/SharePoint.aspx">SharePoint</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1004257/Silverlight-WPF.aspx">Silverlight / WPF</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1646/Visual-Basic.aspx">Visual Basic</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1640/Web-Development.aspx">Web Development</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/suggestions.aspx">Site Bugs / Suggestions</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1652005/Spam-and-Abuse-Watch.aspx">Spam and Abuse Watch</a>
+</li>
+
+		<li class="last"></li>
+	</ul>
+
+</li>
+
+<li class="desktop-only"><a id="ctl00_TopNavBar_Features" href="http://www.codeproject.com/Feature/">features</a>
+
+	<ul>
+		<li><a id="ctl00_TopNavBar_Comps" class="fly" href="http://www.codeproject.com/script/Awards/CurrentCompetitions.aspx?cmpTpId=1&amp;awsac=true">Competitions</a></li>
+		<li><a id="ctl00_TopNavBar_News" class="fly" href="http://www.codeproject.com/script/News/List.aspx">News</a></li>
+		<li><a id="ctl00_TopNavBar_Insider" class="fly" href="http://www.codeproject.com/Feature/Insider/">The Insider Newsletter</a></li>
+    	<li><a id="ctl00_TopNavBar_DailyBuild" class="fly" href="http://www.codeproject.com/Feature/DailyBuild">The Daily Build Newsletter</a></li>
+		<li><a id="ctl00_TopNavBar_Newsletters" class="fly" href="http://www.codeproject.com/script/Mailouts/Archive.aspx?mtpid=1">Newsletter archive</a></li>
+		<li><a id="ctl00_TopNavBar_Surveys" class="fly" href="http://www.codeproject.com/script/Surveys/List.aspx">Surveys</a></li>
+		<li><a id="ctl00_TopNavBar_Showcase" class="fly" href="http://www.codeproject.com/KB/showcase/">Product Showcase</a></li>
+		<li><a id="ctl00_TopNavBar_Research" class="fly" href="http://www.codeproject.com/script/ResearchLibrary/Index.aspx">Research Library</a></li>
+
+		<li><a id="ctl00_TopNavBar_Stuff" class="fly" href="http://www.codeproject.com/Info/Stuff.aspx">CodeProject Stuff</a></li>
+		<li class="last"></li>
+	</ul>
+
+</li>
+
+
+<li class=""><a id="ctl00_TopNavBar_Lounge" href="http://www.codeproject.com/Lounge.aspx">
+            <span class="desktop-only tablet-only">community</span><span class="mobile-only">lounge</span>
+</a>
+
+	<ul>
+		<li><a id="ctl00_TopNavBar_WhosWho" class="fly" href="http://www.codeproject.com/script/Membership/Profiles.aspx">Who's Who</a></li>
+		<li><a id="ctl00_TopNavBar_MVPs" class="fly break" href="http://www.codeproject.com/script/Awards/MVPWinners.aspx">Most Valuable Professionals</a></li>
+		
+
+		<li><a id="ctl00_TopNavBar_LoungeLnk" class="fly highlight2" href="http://www.codeproject.com/Lounge.aspx">The Lounge &nbsp;</a></li>
+		<li><a id="ctl00_TopNavBar_InsiderLnk" class="fly" href="http://www.codeproject.com/Insider.aspx">The Insider News</a></li>
+		<li><a id="ctl00_TopNavBar_WeirdWonderful" class="fly" href="http://www.codeproject.com/Feature/WeirdAndWonderful.aspx">The Weird &amp; The Wonderful</a></li>
+		<li><a id="ctl00_TopNavBar_SoapBoxLnk" class="fly" href="http://www.codeproject.com/Forums/1536756/The-Soapbox.aspx">The Soapbox</a></li>
+		<li><a id="ctl00_TopNavBar_PRLnk" class="fly break" href="http://www.codeproject.com/Forums/1738007/Press-Releases.aspx">Press Releases</a></li>
+
+		
+		<li class=""><a class="fly" href="http://www.codeproject.com/Forums/1580229/Hindi.aspx">Non-English Language
+			<span class="has-submenu">&gt;</span></a>
+		<ul>
+		<li><a class="fly" href="http://www.codeproject.com/Forums/1580229/Hindi.aspx">General Indian Topics</a></li>
+		<li><a class="fly" href="http://www.codeproject.com/Forums/1580230/Chinese.aspx">General Chinese Topics</a></li>
+		</ul>
+		</li><li class="last"></li>
+		
+	</ul>
+
+</li>
+
+
+<li class="desktop-only tablet-only" style="margin-left:20px"><a id="ctl00_TopNavBar_Help" href="http://www.codeproject.com/KB/FAQs/">help</a>
+
+	<ul>
+		<li><a id="ctl00_TopNavBar_HelpWhatIs" class="fly" href="http://www.codeproject.com/info/guide.aspx">What is 'CodeProject'?</a></li>
+		<li><a id="ctl00_TopNavBar_HelpGeneral" class="fly break" href="http://www.codeproject.com/KB/FAQs/">General FAQ</a></li>
+		<li><a id="ctl00_TopNavBar_HelpPostQuestion" class="fly break highlight2" href="http://www.codeproject.com/Questions/ask.aspx">Ask a Question</a></li>
+		<li><a id="ctl00_TopNavBar_HelpBugs" class="fly" href="http://www.codeproject.com/suggestions.aspx">Bugs and Suggestions</a></li>
+		<li><a id="ctl00_TopNavBar_HelpArticles" class="fly" href="http://www.codeproject.com/Forums/1641/Article-Writing.aspx">Article Help Forum</a></li>
+		<li><a id="ctl00_TopNavBar_HelpSiteMap" class="fly" href="http://www.codeproject.com/script/Content/SiteMap.aspx">Site Map</a></li>
+		<li><a id="ctl00_TopNavBar_HelpAdvertise" class="fly" href="http://developermedia.com/">Advertise with us</a></li>
+		<li><a id="ctl00_TopNavBar_HelpJobs" class="fly" href="http://www.codeproject.com/info/Jobs/">Employment Opportunities</a></li>
+		<li><a id="ctl00_TopNavBar_HelpAboutUs" class="fly" href="http://www.codeproject.com/info/about.aspx">About Us</a></li>
+		<li class="last"></li>
+	</ul>
+
+</li>
+
+</ul>
+
+</div>
+    </div>
+	<div class="sub-headerbar-divider"></div>
+	</div>		
+	
+
+	<div id="A" class="container-content-wrap fixed"> 
+
+	<div itemscope="" itemtype="http://schema.org/Article" class="container-content"> 
+
+
+		<div class="clearfix">
+			<div class="container-breadcrumb float-left ">
+				<div><a href="http://www.codeproject.com/script/Content/SiteMap.aspx">Articles</a> » <a href="http://www.codeproject.com/Chapters/2/Web-Development.aspx">Web Development</a> » <a href="http://www.codeproject.com/KB/applications/"><span itemprop="articleSection">Applications &amp; Tools</span></a> » <a href="http://www.codeproject.com/KB/applications/#General">General</a></div>
+			</div>
+
+			<div class="float-left">
+				
+			</div>
+
+			<div class="edit-links float-right">
+				
+
+
+ 
+&nbsp;
+
+
+
+
+
+
+
+
+
+
+			</div>
+
+			<div class="article-nav float-right">
+					
+		        
+		        
+					
+
+                
+				
+
+<a id="ctl00_ActionLinks_BookmarkMd_ImgBt" title="Bookmark" alternatetext="Bookmark" name="bm_841776_2" onclick="return bookmarkMe(841776,2,'/script/Bookmarks/Ajax/Add.aspx?obid=841776&amp;obtid=2&amp;action=AddBookmark&amp;bio=true&amp;bis=medium','medium');" href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=841776&amp;obtid=2&amp;action=AddBookmark&amp;bio=true&amp;bis=medium" style="display:inline-block;height:24px;width:24px;"><img title="Bookmark" src="AngularJS%20ui-router%20-%20CodeProject_files/bookmark24.png" alt="" style="border-width:0px;"></a>
+
+
+<span id="ctl00_ActionLinks_BookmarkMd_StatusMsg" class="tiny-text" style="display:none" name="bm_841776_2"></span>
+<a id="ctl00_ActionLinks_PrintMd" href="http://www.codeproject.com/Articles/841776/AngularJS-ui-router?display=Print">
+	<img src="AngularJS%20ui-router%20-%20CodeProject_files/print24.png" title="Print" style="border:0" height="24px" width="24px">
+</a>
+			</div>
+		</div>
+
+		<table class="extended container-article-parts" cellpadding="0" cellspacing="0">
+        <tbody><tr valign="top">
+		<td class="article-wing-left" width="117px">
+
+			<div style="position: static; top: 233.133px; left: 193.5px;" id="ctl00_Nav" class="container-article-tabs">
+    			
+
+<div class="tabs">
+	<div class="selected">Article</div><div class="unselected"><a href="http://www.codeproject.com/script/Articles/ViewDownloads.aspx?aid=841776">Browse Code</a></div><div class="unselected"><a href="http://www.codeproject.com/script/Articles/Statistics.aspx?aid=841776">Stats</a></div><div class="unselected"><a href="http://www.codeproject.com/script/Articles/ListVersions.aspx?aid=841776">Revisions (3)</a></div><div class="unselected"><a href="http://www.codeproject.com/script/Articles/ListAlternatives.aspx?aid=841776">Alternatives</a></div>
+
+	<div class="unselected"><a href="http://www.codeproject.com/Articles/841776/WebControls/#_comments" id="ctl00_ArticleTabs_CommentLink" class="anchorLink">Comments 
+        <span id="ctl00_ArticleTabs_CmtCnt"></span></a>
+	</div>
+</div>	
+
+
+				<a id="ctl00_AddAlternative" title="Write a related article about upgrades or translate this into a different language." class="add-item" href="http://www.codeproject.com/script/Articles/SubmissionWizard.aspx?at=1&amp;apid=841776">Add your own<br>alternative version</a>
+
+			    <div class="tags"> 
+                    <h4>Tagged as</h4>
+                    
+                    <div class="tags">
+<span class="t"><a href="http://www.codeproject.com/search.aspx?sbo=kw&amp;aidlst=2658">AngularJS</a></span></div>
+			    </div>
+                
+
+                <div class="stats">
+                <h4>Stats</h4>
+                <div id="ctl00_ArtStats"><div class="stats"><div>29.8K views</div><div>9 bookmarked</div></div></div>
+                </div>
+
+                <div class="subdue padded-top" title="Date First posted">Posted 
+                    <span itemprop="datePublished" content="2014-11-13">12 Nov 2014</span></div>
+
+                
+			</div>
+
+		</td>
+		<td>
+			
+			<div id="AT" class="container-article  fixed"> 
+
+				<div class="article">
+
+					<form name="aspnetForm" method="post" action="/Articles/841776/AngularJS-ui-router" id="aspnetForm" style="margin:0;padding:0">
+<div>
+<input name="__VIEWSTATE" id="__VIEWSTATE" value="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" type="hidden">
+</div>
+
+<div>
+
+	<input name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="10C1FD69" type="hidden">
+</div>
+
+					
+					 
+					<div class="header">
+					    <a name="Main"></a>
+
+					    
+					    <a name="_articleTop" id="_articleTop"></a>
+					    <div class="title">
+					        
+					        <h1 id="ctl00_ArticleTitle" itemprop="name">AngularJS ui-router </h1> 
+					    </div>
+
+                        <div style="height:34px">
+					        
+					        <div class="entry float-left">
+                                
+                                <div class="float-left">
+
+						            <span class="author"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=4155059" rel="author"><span itemprop="author" itemscope="" itemtype="http://schema.org/Person"><span itemprop="name">KameshKannan</span></span></a></span>, 
+						            <span class="date" itemprop="dateModified" title="Date last updated" content="2014-11-13 02:23:00">
+							            12 Nov 2014</span>
+			
+                                    <a id="ctl00_LicenseLink" title="The Code Project Open License (CPOL)" class="license" href="http://www.codeproject.com/info/cpol10.aspx">CPOL</a><div id="ctl00_CurRat" class="tooltip anchorLink" style="cursor:pointer;margin-top: 5px" name="CurRat_841776">
+				
+							            
+
+<table class="small-text" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating" cellpadding="0" cellspacing="0"> 
+<tbody><tr>
+	
+	<td class="nowrap">
+
+		
+			<meta itemprop="bestRating" content="5"> 
+			<meta itemprop="worstRating" content="1">
+		
+
+		<span id="ctl00_ArticleRating_VI">
+		<div class="nowrap rating-stars-medium" style="height:18px;width:80px;position:relative;">
+	<div class="clipped align-left float-left" style="height:16px;width:74px;">
+		<img src="AngularJS%20ui-router%20-%20CodeProject_files/stars-fill-md.png" style="border-width:0px;">
+	</div><div class="clipped" style="height:16px;width:6px;position:relative;">
+		<img src="AngularJS%20ui-router%20-%20CodeProject_files/stars-empty-md.png" style="border-width:0px;position:absolute;top:0;right:0;">
+	</div>
+</div>
+		</span>
+
+		
+	</td>
+	
+	<td id="ctl00_ArticleRating_VR" class="nowrap">
+		&nbsp;
+		<span id="ctl00_ArticleRating_VotesR">&nbsp;<span itemprop="ratingValue" class="rating">4.64</span> (<span itemprop="ratingCount" class="count">10</span> votes)</span>
+		
+	</td>
+
+</tr>
+
+</tbody></table>
+
+
+							            <div id="ctl00_RB" class="speech-bubble-container-up">
+								            <div class="speech-bubble-up" style="width:150px !important">
+									                        
+<div>
+<table class="feature" title="Voting Distribution. Recent data only" height="50px" cellpadding="0" cellspacing="0" width="100%"><tbody><tr class="chart-row"><td class="chart-column"><span title="0 votes">1</span></td>
+<td class="chart-column"><span title="0 votes">2</span></td>
+<td class="chart-column"><span title="0 votes">3</span></td>
+<td class="chart-column"><div><img src="AngularJS%20ui-router%20-%20CodeProject_files/pollcol.gif" alt="3 votes, 30.0%" title="3 votes, 30.0%" height="21px" border="0px" width="20pxpx"></div><span title="3 votes">4</span></td>
+<td class="chart-column"><div><img src="AngularJS%20ui-router%20-%20CodeProject_files/pollcol.gif" alt="7 votes, 70.0%" title="7 votes, 70.0%" height="50px" border="0px" width="20pxpx"></div><span title="7 votes">5</span></td>
+</tr></tbody></table><div class="small-text align-center">4.64/5 - 10 votes</div><div class="small-text align-center subdue">μ 4.64, σ<sub>a</sub> 0.84 [<a href="http://www.codeproject.com/KB/FAQs/RatingReputationFAQ.aspx#noisefilter">?</a>]</div>
+</div>
+								            </div>
+								            <div class="speech-bubble-pointer-up">
+									            <div class="speech-bubble-pointer-up-inner"></div>
+								            </div>
+							            </div>
+						            </div>
+                                </div>
+					        </div>
+
+                            
+						    <div id="ctl00_RateArticleRow" class="float-right align-right voting-bar">
+						        <div id="ctl00_RateArticle_RateItemWrapper" class="small-text" name="RateItem_841776">
+
+	<table class="small-text" cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr>
+		<td id="ctl00_RateArticle_VoteResultDiv" class="rating-result align-right">
+			<span class="align-right"></span>
+			<img class="loaderImg" alt="loading..." src="AngularJS%20ui-router%20-%20CodeProject_files/animated_loading_blue.gif" style="display:none;" height="16px" width="16px"> 
+		</td>
+
+	
+		<td class="voteTbl" style="white-space:nowrap" align="right">
+			<table class="small-text">
+			<tbody><tr>
+				<td id="ctl00_RateArticle_RateText" class="rating-prompt">
+					Rate this:
+				</td>
+
+				
+				<td id="ctl00_RateArticle_VoteFormDiv" class="nowrap rating-stars-voter-large">
+					
+
+					<span id="ctl00_RateArticle_RB" class="tooltip ajaxHist radio voting">
+						<span id="ctl00_RateArticle_VoteRBL"><input style="display: none;" id="ctl00_RateArticle_VoteRBL_0" name="ctl00$RateArticle$VoteRBL" value="1" type="radio"><input style="display: none;" id="ctl00_RateArticle_VoteRBL_1" name="ctl00$RateArticle$VoteRBL" value="2" type="radio"><input style="display: none;" id="ctl00_RateArticle_VoteRBL_2" name="ctl00$RateArticle$VoteRBL" value="3" type="radio"><input style="display: none;" id="ctl00_RateArticle_VoteRBL_3" name="ctl00$RateArticle$VoteRBL" value="4" type="radio"><input style="display: none;" id="ctl00_RateArticle_VoteRBL_4" name="ctl00$RateArticle$VoteRBL" value="5" type="radio"></span> 
+
+						
+					<div class="rating-star-block"><a title="vote 1" class="star outline" rating="1" href="#">vote 1</a><a title="vote 2" class="star outline" rating="2" href="#">vote 2</a><a title="vote 3" class="star outline" rating="3" href="#">vote 3</a><a title="vote 4" class="star outline" rating="4" href="#">vote 4</a><a title="vote 5" class="star outline" rating="5" href="#">vote 5</a></div></span>
+
+				</td>
+
+				
+				<td style="padding-left:5px">	
+					<input style="display: none;" name="ctl00$RateArticle$SubmitRateBtn" value="Vote!" id="ctl00_RateArticle_SubmitRateBtn" class="button" type="submit">
+				</td>
+			</tr>
+			</tbody></table>
+			
+		</td>
+	</tr>
+	</tbody></table>
+	<div class="hover-container">
+		
+        <div id="ctl00_RateArticle_RSU" class="rating-comment align-left float-right">
+            <div class="padded">
+            Please <a id="ctl00_RateArticle_SignUp" href="https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f841776%2fAngularJS-ui-router">Sign up or sign in</a> to vote.
+            </div>
+        </div>
+	</div>
+</div>
+						    </div>
+						    	
+                        </div>
+
+   					    
+                        <div id="ctl00_description" class="summary" itemprop="headline">Create simple ui-router using AngularJS</div><span id="ctl00_thumbnailUrl" class="date" itemprop="image" content="http://www.codeproject.com/script/Articles/Images/article100x80.png"></span>			
+
+                    </div>
+                    
+					
+					
+
+					
+
+					
+					
+					
+
+						
+					
+
+					
+
+						
+						<div id="contentdiv" class="text" itemprop="articleBody">
+						
+
+
+
+<h2>Introduction</h2>
+
+<p>I am a newbie to AngularJS world, and working with it for couple of 
+months and still learning the new things and the power of the AngularJS 
+Framework. It is really amazing and the good stuff is that you can do 
+quickly, what you feel like doing in UI side, it is very easy to do with
+ couple of lines of code.</p>
+
+<p>One of the thing in AngularJS is impressed me is the routing 
+Framework. Hope this would help those who would like to start with it 
+(AngularJS Ui-router).</p>
+
+<p>We will see the Simple example about what is Routing and how to configure and work with it.</p>
+
+<p>If you want to have quick view and to jump to action, please see <a href="http://plnkr.co/edit/WWFt5XJ15txHXjimO4Vl?p=info">here</a>&nbsp;</p>
+
+<h2>Background</h2>
+
+<p>Those who are having the background working with Microsoft .NET MVC 
+they are more familiar with the Architectural Pattern MVC 
+(Model-View-Controller). In this the server side code will be handled by
+ the Controller and Model can be your Domain Entity which serves its 
+purpose of binding the data in View.</p>
+
+<p>The same Concept of MVC pattern is been used with the UI layer side, 
+No server code as such. Just assume that you have couple of Javascipt 
+file where it serves the purpose of MVC with the power of AngularJS.</p>
+
+<p>One of the greatest feature in Microsoft MVC is that the way to 
+navigate from one page to another page, which is been controlled by the 
+routing engine. The same concept is availble in AngularJS we call it as 
+Routing Framework / Routing Service.</p>
+
+<p><strong>Note: We are not going to see Angular Architecture and MVC in this article. <u>The focus is on AngularJS ui-router module.</u></strong></p>
+
+<p>Ok, We will see Routing Engine (ui-router) in AngularjS. We have two 
+version of Routing Framework, i am not going to talk about the both, let
+ us focus on the UI-ROUTER.</p>
+
+<h2>Page Navigation</h2>
+
+<p>Usually we will have the navigation of pages as shown below in high-level.</p>
+
+<p><img alt="" src="data:image/png;base64,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"></p>
+
+<p>Let us assume the basic flow of pages from one HTML Page to another 
+HTML Page. In AngularJS world we call it as PartialViews. For all the 
+pages we have an starting location/ starting page. Let us have it as 
+Main.HTML.</p>
+
+<p>Now the flow would look like as shown below.&nbsp; What does it mean 
+is, we are going to have the container page where the other pages are 
+hosted into it, here the container page is <code>Main.html</code>.</p>
+
+<p><img alt="" src="data:image/png;base64,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"></p>
+
+<p>Hence, using the AngularJS Routing Framework we are going to navigate
+ from one page to another page.&nbsp; Ok. Let us stop with this "text" 
+explanation. Get into "action" now. <img src="AngularJS%20ui-router%20-%20CodeProject_files/smiley_smile.gif" alt="Smile | :)" align="top"> </p>
+
+<h2>Using the code</h2>
+
+<p>Ok, To start with what we do is, using Visual Studio, we create Empty
+ web application, and then in that we will create totally 4 HTML files 
+as shown below.</p>
+
+<p><u>Note: We will be using the 1.2 version of AngularJS, while i write this article, AngularJS 1.3 was already released.</u></p>
+
+<p>1. Main.html,</p>
+
+<p>2. Page-1.html</p>
+
+<p>3. Page-2.html</p>
+
+<p>4. Page-3.html</p>
+
+<p>&nbsp;</p>
+
+<h4>Main.html</h4>
+
+<p>The content of the Main.html file will look like as shown below</p>
+
+<div class="pre-action-link" id="premain941227" style="width:100%;display:block;"><span id="prehide941227" onclick="processCodeBlocks.togglePre(941227);">Hide</span>  &nbsp; <span onclick="return processCodeBlocks.copyCode(941227);">Copy Code</span></div><pre class="notranslate" style="margin-top: 0px;" id="pre941227" lang="C++">&lt;!-- Main.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html xmlns=<span class="code-string">"</span><span class="code-string">http://www.w3.org/1999/xhtml"</span>&gt;
+&lt;head&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;script src=<span class="code-string">"</span><span class="code-string">Scripts/angular.js"</span>&gt;&lt;/script&gt;
+    &lt;script src=<span class="code-string">"</span><span class="code-string">Scripts/angular-ui-router.js"</span>&gt;&lt;/script&gt;
+    &lt;script src=<span class="code-string">"</span><span class="code-string">App.js"</span>&gt;&lt;/script&gt;
+
+&lt;/head&gt;
+&lt;body data-ng-app=<span class="code-string">"</span><span class="code-string">myApp"</span>&gt;
+    &lt;h1&gt;AngularJS Ui router - Demonstration&lt;/h1&gt;
+    &lt;h4&gt;This is the Home Page&lt;/h4&gt;    
+    &lt;div data-ui-view=<span class="code-string">"</span><span class="code-string">"</span>&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;html&gt;</pre>
+
+<p>Ok we see one by one what the main.html page does.</p>
+
+<div class="pre-action-link" id="premain548048" style="width:100%;display:block;"><span id="prehide548048" onclick="processCodeBlocks.togglePre(548048);">Hide</span>  &nbsp; <span onclick="return processCodeBlocks.copyCode(548048);">Copy Code</span></div><pre class="notranslate" style="margin-top: 0px;" id="pre548048" lang="C++">&lt;script src=<span class="code-string">"</span><span class="code-string">Scripts/angular.js"</span>&gt;&lt;/script&gt;
+&lt;script src=<span class="code-string">"</span><span class="code-string">Scripts/angular-ui-router.js"</span>&gt;&lt;/script&gt;</pre>
+
+<p>Hope you would have noticed from the above scripts section, we have 
+to add / use NuGet to install the angular ui-router into your project, 
+and then reference the path in your scripts section.</p>
+
+<p>Yes, the ui-router in AngularJS is separate module, we need to add separately.</p>
+
+<div class="pre-action-link" id="premain754985" style="width:100%;display:block;"><span id="prehide754985" onclick="processCodeBlocks.togglePre(754985);">Hide</span>  &nbsp; <span onclick="return processCodeBlocks.copyCode(754985);">Copy Code</span></div><pre class="notranslate" style="margin-top: 0px;" id="pre754985" lang="C++">&lt;script src=<span class="code-string">"</span><span class="code-string">App.js"</span>&gt;&lt;/script&gt;</pre>
+
+<p>Now, the first two scripts file you aware, the next <code>App.js</code> file i will talk about later.</p>
+
+<div class="pre-action-link" id="premain444245" style="width:100%;display:block;"><span id="prehide444245" onclick="processCodeBlocks.togglePre(444245);">Hide</span>  &nbsp; <span onclick="return processCodeBlocks.copyCode(444245);">Copy Code</span></div><pre class="notranslate" style="margin-top: 0px;" id="pre444245" lang="C++">&lt;h1&gt;AngularJS Ui router - Demonstration&lt;/h1&gt;</pre>
+
+<p>In the body section, we have the &lt;h1&gt; tag where it will be like
+ Master page in that it will show the heading as "AngularJS Ui-router 
+Demonstration" for each page, as we navigate.</p>
+
+<p>Another important thing you can see the next line of &lt;h1&gt; tag is</p>
+
+<div class="pre-action-link" id="premain463970" style="width:100%;display:block;"><span id="prehide463970" onclick="processCodeBlocks.togglePre(463970);">Hide</span>  &nbsp; <span onclick="return processCodeBlocks.copyCode(463970);">Copy Code</span></div><pre class="notranslate" style="margin-top: 0px;" id="pre463970" lang="C++">&lt;div data-ui-view=<span class="code-string">"</span><span class="code-string">"</span>&gt;&lt;/div&gt;</pre>
+
+<p>This is the placeholder for the ui-router engine, to inject all the 
+partial views which we are going to declare into the route 
+configuration. We see that after creating rest of the HTML partial 
+views.</p>
+
+<h4>Page-1.html</h4>
+
+<p>To make things very simple i am going to create some sort of static 
+content into the Page-1 to Page-3 HTML Pages. Now the Page-1.html 
+content will look like this.</p>
+
+<div class="pre-action-link" id="premain549707" style="width:100%;display:block;"><span id="prehide549707" onclick="processCodeBlocks.togglePre(549707);">Hide</span>  &nbsp; <span onclick="return processCodeBlocks.copyCode(549707);">Copy Code</span></div><pre class="notranslate" style="margin-top: 0px;" id="pre549707" lang="C++">&lt;div&gt;
+    &lt;div style=<span class="code-string">"</span><span class="code-string">height: 400px"</span>&gt;
+       &lt;h2&gt;Partial view-1&lt;/h2&gt;
+       &lt;p&gt;The partial view of the content goes here... 
+    &lt;/div&gt;
+    &lt;div ui-sref=<span class="code-string">"</span><span class="code-string">page2"</span>&gt;&lt;a href=<span class="code-string">"</span><span class="code-string">"</span>&gt;Page 2&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<p>Note that the content of the Page-1 is not having any HTML and BODY 
+tags, this is because as i said earlier this is partial view which is 
+going to get rendered into the placeholder what we declared in the 
+main.html page.</p>
+
+<div class="pre-action-link" id="premain460194" style="width:100%;display:block;"><span id="prehide460194" onclick="processCodeBlocks.togglePre(460194);">Hide</span>  &nbsp; <span onclick="return processCodeBlocks.copyCode(460194);">Copy Code</span></div><pre class="notranslate" style="margin-top: 0px;" id="pre460194" lang="C++">&lt;div ui-sref=<span class="code-string">"</span><span class="code-string">page2"</span>&gt;&lt;a href=<span class="code-string">"</span><span class="code-string">"</span>&gt;Page 2&lt;/a&gt;&lt;/div&gt;</pre>
+
+<p>The above line is navigation Link from Page-1 to Page-2. So when you 
+click on the link "Page 2" you will be directed to the Next page. This 
+done by the &lt;ui-sref&gt; tag.</p>
+
+<p>Lets move on. The other page contents will look similar except some minor changes. Lets see what those are.</p>
+
+<h4>Page-2.html</h4>
+
+<p>Now the Page-2.html content will look like this.</p>
+
+<div class="pre-action-link" id="premain756266" style="width:100%;display:block;"><span id="prehide756266" onclick="processCodeBlocks.togglePre(756266);">Hide</span>  &nbsp; <span onclick="return processCodeBlocks.copyCode(756266);">Copy Code</span></div><pre class="notranslate" style="margin-top: 0px;" id="pre756266" lang="C++">&lt;div&gt;
+    &lt;div style=<span class="code-string">"</span><span class="code-string">height: 400px"</span>&gt;
+       &lt;h2&gt;Partial view-2&lt;/h2&gt;
+       &lt;p&gt;The partial view of the content goes here... 
+    &lt;/div&gt;
+    &lt;div ui-sref=<span class="code-string">"</span><span class="code-string">page3"</span>&gt;&lt;a href=<span class="code-string">"</span><span class="code-string">"</span>&gt;Page 3&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<p>Note from the above code compared to Page-1.html is we have just changed the <code>ui-sref </code>state name and the <code>&lt;a&gt;</code> tag text.</p>
+
+<h4>Page-3.html</h4>
+
+<p>Now the Page-2.html content will look like this.</p>
+
+<div class="pre-action-link" id="premain770913" style="width:100%;display:block;"><span id="prehide770913" onclick="processCodeBlocks.togglePre(770913);">Hide</span>  &nbsp; <span onclick="return processCodeBlocks.copyCode(770913);">Copy Code</span></div><pre class="notranslate" style="margin-top: 0px;" id="pre770913" lang="C++">&lt;div&gt;
+    &lt;div style=<span class="code-string">"</span><span class="code-string">height: 400px"</span>&gt;
+       &lt;h2&gt;Partial view-3&lt;/h2&gt;
+       &lt;p&gt;The partial view of the content goes here... 
+    &lt;/div&gt;
+    &lt;div ui-sref=<span class="code-string">"</span><span class="code-string">page1"</span>&gt;&lt;a href=<span class="code-string">"</span><span class="code-string">"</span>&gt;Back to Page 1&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<p>Note from the above code compared to Page-2.html is we have just changed the <code>ui-sref </code>state name and the <code>&lt;a&gt;</code> tag text. Note from this page we are navigating back to the first page <code>Page-1.html</code></p>
+
+<p>Ok, we are almost done with declaring the HTML pages and with its 
+content. Now lets dive into the angularjs portion of state engine.</p>
+
+<p>Now, in the root of the Visual Studio empty project, create a JavaScript file, and name it as <code>App.js</code>.</p>
+
+<h4>App.js</h4>
+
+<p>This is the file which is going to have the AngularJS application module declared in it. Also the state navigation declared.</p>
+
+<div class="pre-action-link" id="premain812932" style="width:100%;display:block;"><span id="prehide812932" onclick="processCodeBlocks.togglePre(812932);">Hide</span>  &nbsp; <span onclick="return processCodeBlocks.copyCode(812932);">Copy Code</span></div><pre class="notranslate" style="margin-top: 0px;" id="pre812932" lang="C++">var myApp = angular.module(<span class="code-string">"</span><span class="code-string">myApp"</span>, [<span class="code-string">'</span><span class="code-string">ui.router'</span>]);
+
+myApp.config(function ($stateProvider, $urlRouterProvider) {
+
+     $urlRouterProvider.when(<span class="code-string">"</span><span class="code-string">"</span>, <span class="code-string">"</span><span class="code-string">/page1"</span>);
+
+     $stateProvider
+        .state(<span class="code-string">"</span><span class="code-string">page1"</span>, {
+            url: <span class="code-string">"</span><span class="code-string">/page1"</span>,
+            templateUrl: <span class="code-string">"</span><span class="code-string">Page-1.html"</span>
+        })
+        .state(<span class="code-string">"</span><span class="code-string">page2"</span>, {
+            url:<span class="code-string">"</span><span class="code-string">/page2"</span>,
+            templateUrl: <span class="code-string">"</span><span class="code-string">Page-2.html"</span>
+        })
+        .state(<span class="code-string">"</span><span class="code-string">page3"</span>, {
+            url:<span class="code-string">"</span><span class="code-string">/page3"</span>,
+            templateUrl: <span class="code-string">"</span><span class="code-string">Page-3.html"</span>
+        });
+});</pre>
+
+<p>Ok, let us see the configurations one by one.</p>
+
+<div class="pre-action-link" id="premain309103" style="width:100%;display:block;"><span id="prehide309103" onclick="processCodeBlocks.togglePre(309103);">Hide</span>  &nbsp; <span onclick="return processCodeBlocks.copyCode(309103);">Copy Code</span></div><pre class="notranslate" style="margin-top: 0px;" id="pre309103" lang="C++">var myApp = angular.module(<span class="code-string">"</span><span class="code-string">myApp"</span>, [<span class="code-string">'</span><span class="code-string">ui.router'</span>]);</pre>
+
+<p>This line delcares the AngularJS module and the <code>'ui-router'</code> module injected into it.</p>
+
+<div class="pre-action-link" id="premain702818" style="width:100%;display:block;"><span id="prehide702818" onclick="processCodeBlocks.togglePre(702818);">Hide</span>  &nbsp; <span onclick="return processCodeBlocks.copyCode(702818);">Copy Code</span></div><pre class="notranslate" style="margin-top: 0px;" id="pre702818" lang="C++">myApp.config(function ($stateProvider, $urlRouterProvider) {</pre>
+
+<p>The above line is the state routing configuration which will be declared using the .config function. the <code>$stateProvider</code> and <code>$urlRouterProvider</code>
+ are the services which are available to handle the state navigation. 
+The state navigation declaration has the following parameters,</p>
+
+<p>stateName, UrlName, Template or TemplateURL and the Controller.&nbsp; (We are not using controller for this example)</p>
+
+<div class="pre-action-link" id="premain73323" style="width:100%;display:block;"><span id="prehide73323" onclick="processCodeBlocks.togglePre(73323);">Hide</span>  &nbsp; <span onclick="return processCodeBlocks.copyCode(73323);">Copy Code</span></div><pre class="notranslate" style="margin-top: 0px;" id="pre73323" lang="C++"> $stateProvider
+        .state(<span class="code-string">"</span><span class="code-string">page1"</span>, {
+            url: <span class="code-string">"</span><span class="code-string">/page1"</span>,
+            templateUrl: <span class="code-string">"</span><span class="code-string">Page-1.html"</span>
+        })</pre>
+
+<p>So as per our declaration, the <code>"page1"</code> is the state name and the <code>"/page1"</code>
+ is the URL which you see during the navigation in the address bar. The 
+templateUrl is the partial view which is going to be displayed when we 
+do the navigation.</p>
+
+<div class="pre-action-link" id="premain943326" style="width:100%;display:block;"><span id="prehide943326" onclick="processCodeBlocks.togglePre(943326);">Hide</span>  &nbsp; <span onclick="return processCodeBlocks.copyCode(943326);">Copy Code</span></div><pre class="notranslate" style="margin-top: 0px;" id="pre943326" lang="C++">$urlRouterProvider.when(<span class="code-string">"</span><span class="code-string">"</span>, <span class="code-string">"</span><span class="code-string">/page1"</span>);</pre>
+
+<p>Also note that the above lines gives you the default view displayed 
+during the load, which is nothing but the first partial view which the 
+placeholder will have in the main.html</p>
+
+<p>Like this we have delcared the routes for all the pages, now that we 
+are telling the route/state configuration when we do the navigation. 
+Now, AngularJS knows what are the partial views available to navigate 
+and which one to start at the beginning, but how to navigate from one 
+page to another page.</p>
+
+<p>Yes, you are right, this what we have already declared in the 
+page-1.html to navigate to other pages. (Note: We have different ways of
+ navigations, ui-sref is one of the way). As i said earlier, the page-1 
+has the content to navigate. Note that we are using the state names to 
+navigate from one view to another view.</p>
+
+<div class="pre-action-link" id="premain335018" style="width:100%;display:block;"><span id="prehide335018" onclick="processCodeBlocks.togglePre(335018);">Hide</span>  &nbsp; <span onclick="return processCodeBlocks.copyCode(335018);">Copy Code</span></div><pre class="notranslate" style="margin-top: 0px;" id="pre335018" lang="C++">&lt;div ui-sref=<span class="code-string">"</span><span class="code-string"><strong>page2</strong>"</span>&gt;&lt;a href=<span class="code-string">"</span><span class="code-string">"</span>&gt;Page 2&lt;/a&gt;&lt;/div&gt;</pre>
+
+<p>Now, we see the entire content of the files what we created so far.</p>
+
+<div class="pre-action-link" id="premain983961" style="width:100%;display:block;"><span id="prehide983961" onclick="processCodeBlocks.togglePre(983961);">Hide</span>  &nbsp; <span onclick="return processCodeBlocks.copyCode(983961);">Copy Code</span></div><pre class="notranslate" style="margin-top: 0px;" id="pre983961" lang="C++">&lt;!-- Main.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html xmlns=<span class="code-string">"</span><span class="code-string">http://www.w3.org/1999/xhtml"</span>&gt;
+&lt;head&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;script src=<span class="code-string">"</span><span class="code-string">Scripts/angular.js"</span>&gt;&lt;/script&gt;
+    &lt;script src=<span class="code-string">"</span><span class="code-string">Scripts/angular-ui-router.js"</span>&gt;&lt;/script&gt;
+    &lt;script src=<span class="code-string">"</span><span class="code-string">App.js"</span>&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body data-ng-app=<span class="code-string">"</span><span class="code-string">myApp"</span>&gt;
+    &lt;h1&gt;AngularJS Ui router - Demonstration&lt;/h1&gt;
+    &lt;h4&gt;This is the Home Page&lt;/h4&gt;
+    &lt;div data-ui-view=<span class="code-string">"</span><span class="code-string">"</span>&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;html&gt;</pre>
+
+<div class="pre-action-link" id="premain597251" style="width:100%;display:block;"><span id="prehide597251" onclick="processCodeBlocks.togglePre(597251);">Hide</span>  &nbsp; <span onclick="return processCodeBlocks.copyCode(597251);">Copy Code</span></div><pre class="notranslate" style="margin-top: 0px;" id="pre597251" lang="C++">&lt;!-- Page-<span class="code-digit">1</span>.html --&gt;
+&lt;div&gt;
+    &lt;div style=<span class="code-string">"</span><span class="code-string">height: 400px"</span>&gt;
+       &lt;h2&gt;Partial view-1&lt;/h2&gt;
+       &lt;p&gt;The partial view of the content goes here...&lt;/p&gt; 
+    &lt;/div&gt;
+    &lt;div ui-sref=<span class="code-string">"</span><span class="code-string">page2"</span>&gt;&lt;a href=<span class="code-string">"</span><span class="code-string">"</span>&gt;Page 2&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
+
+<div class="pre-action-link" id="premain366623" style="width:100%;display:block;"><span id="prehide366623" onclick="processCodeBlocks.togglePre(366623);">Hide</span>  &nbsp; <span onclick="return processCodeBlocks.copyCode(366623);">Copy Code</span></div><pre class="notranslate" style="margin-top: 0px;" id="pre366623" lang="C++">&lt;!-- Page-<span class="code-digit">2</span>.html --&gt;
+&lt;div&gt;
+    &lt;div style=<span class="code-string">"</span><span class="code-string">height: 400px"</span>&gt;
+       &lt;h2&gt;Partial view-2&lt;/h2&gt;
+       &lt;p&gt;The partial view of the content goes here...&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div ui-sref=<span class="code-string">"</span><span class="code-string">page3"</span>&gt;&lt;a href=<span class="code-string">"</span><span class="code-string">"</span>&gt;Page 3&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
+
+<div class="pre-action-link" id="premain743560" style="width:100%;display:block;"><span id="prehide743560" onclick="processCodeBlocks.togglePre(743560);">Hide</span>  &nbsp; <span onclick="return processCodeBlocks.copyCode(743560);">Copy Code</span></div><pre class="notranslate" style="margin-top: 0px;" id="pre743560" lang="C++">&lt;!-- Page-<span class="code-digit">3</span>.html --&gt;
+&lt;div&gt;
+    &lt;div style=<span class="code-string">"</span><span class="code-string">height: 400px"</span>&gt;
+       &lt;h2&gt;Partial view-3&lt;/h2&gt;
+       &lt;p&gt;The partial view of the content goes here...&lt;/p&gt; 
+    &lt;/div&gt;
+    &lt;div ui-sref=<span class="code-string">"</span><span class="code-string">page1"</span>&gt;&lt;a href=<span class="code-string">"</span><span class="code-string">"</span>&gt;Back to Page 1&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
+
+<div class="pre-action-link" id="premain124861" style="width:100%;display:block;"><span id="prehide124861" onclick="processCodeBlocks.togglePre(124861);">Hide</span>  &nbsp; <span onclick="return processCodeBlocks.copyCode(124861);">Copy Code</span></div><pre class="notranslate" style="margin-top: 0px;" id="pre124861" lang="C++"><span class="code-comment">//</span><span class="code-comment"> App.js 
+</span>
+var myApp = angular.module(<span class="code-string">"</span><span class="code-string">myApp"</span>, [<span class="code-string">'</span><span class="code-string">ui.router'</span>]);
+
+myApp.config(function ($stateProvider, $urlRouterProvider) {
+
+     $urlRouterProvider.when(<span class="code-string">"</span><span class="code-string">"</span>, <span class="code-string">"</span><span class="code-string">/page1"</span>);
+
+     $stateProvider
+        .state(<span class="code-string">"</span><span class="code-string">page1"</span>, {
+            url: <span class="code-string">"</span><span class="code-string">/page1"</span>,
+            templateUrl: <span class="code-string">"</span><span class="code-string">Page-1.html"</span>
+        })
+        .state(<span class="code-string">"</span><span class="code-string">page2"</span>, {
+            url:<span class="code-string">"</span><span class="code-string">/page2"</span>,
+            templateUrl: <span class="code-string">"</span><span class="code-string">Page-2.html"</span>
+        })
+        .state(<span class="code-string">"</span><span class="code-string">page3"</span>, {
+            url:<span class="code-string">"</span><span class="code-string">/page3"</span>,
+            templateUrl: <span class="code-string">"</span><span class="code-string">Page-3.html"</span>
+        });
+});</pre>
+
+<p>Now, let us view the main.html page in the browser, we get to see the below output.</p>
+
+<p><img alt="" src="data:image/png;base64,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2wCIRrYBEI1sAyAa2QZANLINgGhkGwDRyDYAopFtAEQj2wCIRrYBEI1sAyAa2QZANLINgGhkGwDRyDYAopFtAEQj2wCIRrYBEI1sAyAa2QZANLINgGhkGwDRyDYAopFtAEQj2wCIRrYBEI1sAyAa2QZANLINgGhkGwDRyDYAopFtAEQj2wCIRrYBEI1sAyAa2QZANLINgGhkGwDRyDYAopFtAEQj2wCIRrYBEI1sAyAa2QZANLINgGhkGwDRyDYAopFtAEQj2wCIRrYBEI1sAyAa2QZANLINgGhkGwDRyDYAopFtAEQj2wCIRrYBEI1sAyAa2QZANLINgGhkGwDRyDYAopFtAEQj2wCIRrYBEI1sAyAa2QZANLINgGhkGwDRyDYAopFtAEQj2wCIRrYBEI1sAyAa2QZANLINgGhkGwDRyDYAopFtAEQj2wCIRrYBEI1sAyAa2QZANLINgGhkGwDRyDYAopFtAEQj2wCIRrYBEI1sAyAa2QZANLINgGhkGwDRyDYAopFtAEQj2wCIRrYBEI1sAyAa2QZANLINgGhkGwDRyDYAopFtAEQj2wCIRrYBEI1sAyAa2QZANLINgGhkGwDRyDYAopFtAEQj2wCIRrYBEI1sAyAa2QZANLINgGhkGwDRyDYAopFtAEQj2wCIRrYBEI1sAyAa2QZANLINgGhkGwDRyDYAopFtAEQj2wCIRrYBEI1sAyAa2QZANLINgGhkGwDRyDYAopFtAEQj2wCIRrYBEI1sAyAa2QZANLINgGhkGwDRyDYAopFtAEQj2wCIRrYBEI1sAyAa2QZANLINgGhkGwDRyDYAopFtAEQj2wCIRrYBEI1sAyAa2QZANLINgGhkGwDRyDYAopFtAEQj2wCIRrYBEI1sAyAa2QZANLINgGhkGwDRyDYAopFtAEQj2wCIRrYBEI1sAyAa2QZANLINgGhkGwDRyDYAopFtAEQj2wCIRrYBEI1sAyAa2QZANLINgGhkGwDRyDYAopFtAEQj2wCIRrYBEI1sAyAa2QZANLINgGhkGwDRyDYAopFtAEQj2wCIRrYBEI1sAyAa2QZANLINgGhkGwDRyDYAopFtAEQj2wCIRrYBEI1sAyAa2QZANLINgGhkGwDRyDYAopFtAEQj2wCIRrYBEI1sAyAa2QZANLINgGhkGwDRyDYAopFtAEQj2wCIRrYBEI1sAyAa2QZANLINgGhkGwDRyDYAopFtAEQj2wCIRrYBEI1sAyAa2QZANLINgGhkGwDRyDYAopFtAEQj2wCIRrYBEI1sAyAa2QZANLINgGhkGwDRyDYAopFtAEQj2wCIRrYBEI1sAyAa2QZANLINgGhkGwDRyDYAopFtAEQj2wCIRrYBEI1sAyAa2QZANLINgGhkGwDRyDYAopFtAEQj2wCIRrYBEI1sAyAa2QZANLINgGhkGwDRyDYAopFtAEQj2wCIRrYBEI1sAyAa2QZANLINgGhkGwDRyDYAopFtAEQj2wCIRrYBEE11tj1Yf+mZl698Zvbz0tXB6bdncO3Z2Rq/8s3TXyEA4TRk2yxdvvnalc+8fOXZ9d6pNuebr81W8c3XxBsAC2idbU/OPmw++sozZ3OxCEAoi2ZbchmX/Lz4UarQR19J92Q+87VrD8Yzele/Npve5vrvwfpLsg2A+c2Rbb2rX5tk1eDas69tjCenr67SjwfXnp3F3saLL195ZrpI/mmpjRcz0QgALc15vy1ziTa28eLkOuybr+Uv1JIAK14CNvY3JiNZylYHAPUWHCeZ6WD8TEO25Qs3D7wcXHu2+cIOAErNc78tO2uaTLPrtoo+yVRnZitJFhohCcBiFsm2WWfjkyfjDMsO3M8PGKmJyYr1nvqXDQCIa6HrttSAyd7V177y4jTqBteeLV8kNzCkd/VrVVFnCAkAJ7RQtqVuob10dZBE2vRByX247CJXPvPylWdeu/ag7GZb+rKv8C0CAGjjVH+fpC9fA/AUVGZb6cjG5p9nXr7yTPbxMwvVk/05yz0CwEW31Ou2wtcGjHUE4Oz5N24AiEa2ARCNbAMgGtkGQDSyDYBoZBsA0cg2AKKRbQBEI9sAiEa2ARCNbAMgGtkGQDSyDYBoZBsA0cg2AKKRbQBEI9sAiEa2ARCNbAMgGtkGQDSyDYBoZBsA0cg2AKKRbQBEI9sAiEa2ARCNbAMgGtkGQDSyDYBoZBsA0cg2AKL5/zKRqcEk4OlYAAAAAElFTkSuQmCC" style="width: 339px; height: 362px; border-width: 2px; border-style: solid;"></p>
+
+<p>When you click on the link "Page 2" it takes to the second page...</p>
+
+<p>&nbsp;</p>
+
+<p><img alt="" src="data:image/png;base64,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sA9cDwAA7APXAwAA+8D1AADAPnA9AACwD1wPAADsA9cDAAD7wPUAAMA+cD0AALAPXA8AAOwD1wMAAPvA9QAAwD5wPQAAsA9cDwAA7APXAwAA+8D1AADAPnA9AACwD1wPAADsA9cDAAD7wPUAAMA+cD0AALAPXA8AAOwD1wMAAPvA9QAAwD5wPQAAsA9cDwAA7APXAwAA+8D1AADAPnA9AACwD1wPAADsA9cDAAD7wPUAAMA+cD0AALAPXA8AAOwD1wMAAPvA9QAAwD5wPQAAsA9cDwAA7APXAwAA+8D1AADAPnA9AACwD1wPAADsA9cDAAD7wPUAAMA+cD0AALAPXA8AAOwD1wMAAPvA9QAAwD5wPQAAsA9cDwAA7APXAwAA+8D1AADAPnA9AACwD1wPAADsA9cDAAD7wPUAAMA+cD0AALAPXA8AAOwD1wMAAPvA9QAAwD5wPQAAsA9cDwAA7APXAwAA+8D1AADAPnA9AACwD1wPAADsA9cDAAD7wPUAAMA+cD0AALAPXA8AAOwD1wMAAPvA9QAAwD5wPQAAsA9cDwAA7APXAwAA+8D1AADAPnA9AACwD1wPAADsA9cDAAD7wPUAAMA+cD0AALAPXA8AAOwD1wMAAPvA9QAAwD5wPQAAsA9cDwAA7APXAwAA+8D1AADAPnA9AACwD1wPAADsA9cDAAD7wPUAAMA+cD0AALAPXA8AAOwD1wMAAPvA9QAAwD5wPQAAsA9cDwAA7APXAwAA+8D1AADAPnA9AACwD1wPAADsA9cDAAD7wPUAAMA+cD0AALAPXA8AAOwD1wMAAPvA9QAAwD5wPQAAsA9cDwAA7APXAwAA+8D1AADAPnA9AACwD1wPAADsA9cDAAD7wPUAAMA+cD0AALAPXA8AAOwD1wMAAPvA9QAAwD5wPQAAsA9cDwAA7APXAwAA+8D1AADAPnA9AACwD1wPAADsA9cDAAD7wPUAAMA+cD0AALAPXA8AAOwD1wMAAPvA9QAAwD5wPQAAsA9cDwAA7APXAwAA+8D1AADAPnA9AACwD1wPAADsA9cDAAD7wPUAAMA+cD0AALAPXA8AAOwD1wMAAPvA9QAAwD5wPQAAsA9cDwAA7APXAwAA+8D1AADAPnA9AACwD1wPAADsA9cDAAD7wPUAAMA+cD0AALAPXA8AAOwD1wMAAPvA9QAAwD5wPQAAsA9cDwAA7APXAwAA+8D1AADAPnA9AACwD1wPAADsA9cDAAD7wPUAAMA+cD0AALAPXA8AAOwD1wMAAPvA9QAAwD5wPQAAsA9cDwAA7APXAwAA+8D1AADAPnA9AACwD1wPAADsA9cDAAD7wPUAAMA+cD0AALDP/9/O/eOkssYBGF7HsCI2MAshcRdUVJQugYLODZzEJZBYWrIGbuGRP4qK53I5N6/PkykQhSEWLx+/+YLWA/RpPUCf1gP0aT1An9YD9Gk9QJ/WA/RpPUCf1gP0aT1An9YD9Gk9QJ/WA/RpPUCf1gP0aT1An9YD9Gk9QJ/WA/RpPUCf1gP0aT1An9YD9Gk9QJ/WA/RpPUCf1gP0aT1An9YD9Gk9QJ/WA/RpPUCf1gP0aT1An9YD9Gk9QJ/WA/RpPUCf1gP0aT1An9YD9Gk9QJ/WA/RpPUCf1gP0aT1An9YD9Gk9QJ/WA/RpPUCf1gP0aT1An9YD9Gk9QJ/WA/RpPUCf1gP0aT1An9YD9Gk9QJ/WA/RpPUCf1gP0aT1An9YD9Gk9QJ/WA/RpPUCf1gP0aT1An9YD9Gk9QJ/WA/RpPUCf1gP0aT1An9YD9Gk9QJ/WA/RpPUCf1gP0aT1A32nrn37dDfNxcjjultubvIzN4vW8i4ebnBDgJznT+kNtH9bjZD5Ofz3/t69hu5rer54OZ5R7gOv6tPW728d3sxjm42xzs/MB/ATfaf3LMv/lOMnxYQIzTubj8LpI3+2el/eH+y/6fKD1ANf3Reufl/ev7d6upuvH33dvFsN+lH98e7uaHkr9OJuPw/4hb3886+h0AFzNBfP6c6vsx9nrOv1h/XYh/xL09x8RTt4V3tsshhtcGwD4ib6xD+dkIDP5ovVv//jCjT0P6xtu/gH4Kb6a15/+al/hw7r+gxnOH09jLhn1APAtl7b+MJzZ7X43fT9vOb5mu7/zk7eNT2k9wNVdvK4/2pDzvFwvZvv0b1fT8w95nL3dk/PxJ4aTq7724QBc18WtPxrB3y23L4nf3zgzxz99yDiZj8N69fTBIP74OoHQA1zb1b8P5/PNNgD8BSetP7tz5utjmI/D6e3hj57n9Phb/xGAnn+9rn+3TdO32QD83/hOY4A+rQfo03qAPq0H6NN6gD6tB+jTeoA+rQfo03qAPq0H6NN6gD6tB+jTeoA+rQfo03qAPq0H6NN6gD6tB+jTeoA+rQfo03qAPq0H6NN6gD6tB+jTeoA+rQfo03qAPq0H6NN6gD6tB+jTeoA+rQfo03qAPq0H6NN6gD6tB+jTeoA+rQfo03qAPq0H6PsHodayuV3MnGEAAAAASUVORK5CYII=" style="width: 334px; height: 413px; border-width: 2px; border-style: solid;"></p>
+
+<p>&nbsp;</p>
+
+<h2>Points of Interest</h2>
+
+<p>&nbsp;</p>
+
+<p>NA</p>
+
+<h2>History</h2>
+
+<p>NA</p>
+
+
+						</div>
+						
+
+						<div class="float-right" style="margin:20px 0 0 10px;border:1px solid #ccc">
+						<div class="msg-300x250" data-format="300x250" data-type="ad" data-publisher="lqm.codeproject.site" data-zone="Web-Development/Applications-Tools/General" data-loadonview="true" data-tags="AngularJS,rating4.5"><noscript><a href="http://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/Web-Development/Applications-Tools/General&sz=300x250&c=454754"><img src="http://pubads.g.doubleclick.net/gampad/ad?iu=/6839/lqm.codeproject.site/Web-Development/Applications-Tools/General&sz=300x250&c=454754"  width="300px" height="250px" target="_blank"/></a></noscript><div id="div-gpt-ad-lqm.codeproject.site/web-development/applications-tools/general-2" style="height: 250px; width: 300px; box-sizing: border-box; border: 0px none; font-size: 0px;"><div style="border: 0pt none;" id="google_ads_iframe_/6839/lqm.codeproject.site/web-development/applications-tools/general_2__container__"><iframe src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;" style="border: 0px none; vertical-align: bottom;" marginheight="0" marginwidth="0" scrolling="no" name="google_ads_iframe_/6839/lqm.codeproject.site/web-development/applications-tools/general_2" title="3rd party ad content" id="google_ads_iframe_/6839/lqm.codeproject.site/web-development/applications-tools/general_2" frameborder="0" height="250" width="300"></iframe></div><iframe src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;" style="border: 0px none; vertical-align: bottom; visibility: hidden; display: none;" marginheight="0" marginwidth="0" scrolling="no" name="google_ads_iframe_/6839/lqm.codeproject.site/web-development/applications-tools/general_2__hidden__" title="" id="google_ads_iframe_/6839/lqm.codeproject.site/web-development/applications-tools/general_2__hidden__" frameborder="0" height="0" width="0"></iframe></div></div>
+						</div>
+                        
+                        
+						
+						<h2>License</h2>
+						<div id="LicenseTerms"><p>This article, along with any associated source code and files, is licensed under <a href="http://www.codeproject.com/info/cpol10.aspx" rel="license">The Code Project Open License (CPOL)</a></p></div>
+						
+
+                        
+						<h2>Share</h2>
+				        <div class="share-list">
+					        
+
+
+
+<!-- Buttons start here. Copy this ul to your document. -->
+<ul class="rrssb-buttons clearfix rrssb-1">
+    <li data-size="34" data-initwidth="16.666666666666668" style="width: calc(50% - 84px);" class="email">
+
+        <a href="mailto:?subject=AngularJS%20ui-router%20%20-%20CodeProject&amp;body=Here%27s%20an%20interesting%20article%20on%20for%20you%20on%20codeproject.com%0a%0ahttp%3a%2f%2fwww.codeproject.com%2fArticles%2f841776%2fAngularJS-ui-router%0a">
+            <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve"><g>
+                        <path d="M20.111 26.147c-2.336 1.051-4.361 1.401-7.125 1.401c-6.462 0-12.146-4.633-12.146-12.265 
+                            c0-7.94 5.762-14.833 14.561-14.833c6.853 0 11.8 4.7 11.8 11.252c0 5.684-3.194 9.265-7.399 
+                            9.3 c-1.829 0-3.153-0.934-3.347-2.997h-0.077c-1.208 1.986-2.96 2.997-5.023 2.997c-2.532 
+                            0-4.361-1.868-4.361-5.062 c0-4.749 3.504-9.071 9.111-9.071c1.713 0 3.7 0.4 4.6 0.973l-1.169 
+                            7.203c-0.388 2.298-0.116 3.3 1 3.4 c1.673 0 3.773-2.102 3.773-6.58c0-5.061-3.27-8.994-9.303-8.994c-5.957 
+                            0-11.175 4.673-11.175 12.1 c0 6.5 4.2 10.2 10 10.201c1.986 0 4.089-0.43 5.646-1.245L20.111 
+                            26.147z M16.646 10.1 c-0.311-0.078-0.701-0.155-1.207-0.155c-2.571 0-4.595 2.53-4.595 5.529c0 
+                            1.5 0.7 2.4 1.9 2.4 c1.441 0 2.959-1.828 3.311-4.087L16.646 10.068z"></path></g>
+                </svg>
+            </span>
+            <span class="text">email</span>
+        </a>
+    </li>
+    <li data-size="49" data-initwidth="16.666666666666668" style="width: calc(50% - 84px);" class="twitter">
+        <!-- Replace href with your Meta and URL information  -->
+        <a href="http://twitter.com/home?status=AngularJS+ui-router++-+CodeProject+-+http%3a%2f%2fwww.codeproject.com%2fArticles%2f841776%2fAngularJS-ui-router" class="popup">
+            <span class="icon">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+                <path d="M24.253,8.756C24.689,17.08,18.297,24.182,9.97,24.62c-3.122,0.162-6.219-0.646-8.861-2.32
+                    c2.703,0.179,5.376-0.648,7.508-2.321c-2.072-0.247-3.818-1.661-4.489-3.638c0.801,0.128,1.62,0.076,2.399-0.155
+                    C4.045,15.72,2.215,13.6,2.115,11.077c0.688,0.275,1.426,0.407,2.168,0.386c-2.135-1.65-2.729-4.621-1.394-6.965
+                    C5.575,7.816,9.54,9.84,13.803,10.071c-0.842-2.739,0.694-5.64,3.434-6.482c2.018-0.623,4.212,0.044,5.546,1.683
+                    c1.186-0.213,2.318-0.662,3.329-1.317c-0.385,1.256-1.247,2.312-2.399,2.942c1.048-0.106,2.069-0.394,3.019-0.851
+                    C26.275,7.229,25.39,8.196,24.253,8.756z"></path>
+                </svg>
+            </span>
+            <span class="text">twitter</span>
+        </a>
+    </li>
+
+    <li data-size="62" data-initwidth="16.666666666666668" style="width: 42px;" class="facebook small">
+        <!-- Replace with your URL. For best results, make sure you page has the proper FB Open Graph tags in header: 
+        https://developers.facebook.com/docs/opengraph/howtos/maximizing-distribution-media-content/ -->
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fwww.codeproject.com%2fArticles%2f841776%2fAngularJS-ui-router" class="popup">
+            <span class="icon">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+                    <path d="M27.825,4.783c0-2.427-2.182-4.608-4.608-4.608H4.783c-2.422,0-4.608,2.182-4.608,4.608v18.434
+                        c0,2.427,2.181,4.608,4.608,4.608H14V17.379h-3.379v-4.608H14v-1.795c0-3.089,2.335-5.885,5.192-5.885h3.718v4.608h-3.726
+                        c-0.408,0-0.884,0.492-0.884,1.236v1.836h4.609v4.608h-4.609v10.446h4.916c2.422,0,4.608-2.188,4.608-4.608V4.783z"></path>
+                </svg>
+            </span>
+            <span class="text">facebook</span>
+        </a>
+    </li>
+    
+    <li data-size="52" data-initwidth="16.666666666666668" style="width: 42px;" class="linkedin small">
+        <!-- Replace href with your meta and URL information -->
+        <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fwww.codeproject.com%2fArticles%2f841776%2fAngularJS-ui-router&amp;title=AngularJS+ui-router++-+CodeProject&amp;summary=&amp;source=codeproject.com" class="popup">
+            <span class="icon">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+                    <path d="M25.424,15.887v8.447h-4.896v-7.882c0-1.979-0.709-3.331-2.48-3.331c-1.354,0-2.158,0.911-2.514,1.803
+                        c-0.129,0.315-0.162,0.753-0.162,1.194v8.216h-4.899c0,0,0.066-13.349,0-14.731h4.899v2.088c-0.01,0.016-0.023,0.032-0.033,0.048
+                        h0.033V11.69c0.65-1.002,1.812-2.435,4.414-2.435C23.008,9.254,25.424,11.361,25.424,15.887z M5.348,2.501
+                        c-1.676,0-2.772,1.092-2.772,2.539c0,1.421,1.066,2.538,2.717,2.546h0.032c1.709,0,2.771-1.132,2.771-2.546
+                        C8.054,3.593,7.019,2.501,5.343,2.501H5.348z M2.867,24.334h4.897V9.603H2.867V24.334z"></path>
+                </svg>
+            </span>
+            <span class="text">linkedin</span>
+        </a>
+    </li>
+    <li data-size="41" data-initwidth="16.666666666666668" style="width: 42px;" class="reddit small">
+        <a href="http://www.reddit.com/submit?url=http%3a%2f%2fwww.codeproject.com%2fArticles%2f841776%2fAngularJS-ui-router&amp;title=AngularJS+ui-router++-+CodeProject">
+            <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve"><g>
+                <path d="M11.794 15.316c0-1.029-0.835-1.895-1.866-1.895c-1.03 0-1.893 0.865-1.893 1.895s0.863 1.9 1.9 1.9 C10.958 17.2 11.8 16.3 11.8 15.316z"></path>
+                <path d="M18.1 13.422c-1.029 0-1.895 0.864-1.895 1.895c0 1 0.9 1.9 1.9 1.865c1.031 0 1.869-0.836 1.869-1.865 C19.969 14.3 19.1 13.4 18.1 13.422z"></path>
+                <path d="M17.527 19.791c-0.678 0.678-1.826 1.006-3.514 1.006c-0.004 0-0.009 0-0.014 0c-0.004 0-0.01 0-0.015 0 
+                c-1.686 0-2.834-0.328-3.51-1.005c-0.264-0.265-0.693-0.265-0.958 0c-0.264 0.265-0.264 0.7 0 1 c0.943 0.9 2.4 1.4 
+                4.5 1.402c0.005 0 0 0 0 0c0.005 0 0 0 0 0c2.066 0 3.527-0.459 4.47-1.402 c0.265-0.264 0.265-0.693 0.002-0.958C18.221 
+                19.5 17.8 19.5 17.5 19.791z"></path><path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237c-0.793 0-1.518 0.287-2.082 
+                0.761c-2.039-1.295-4.646-2.069-7.438-2.219 l1.483-4.691l4.062 0.956c0.071 1.4 1.3 2.6 2.7 2.555c1.488 0 2.695-1.208 
+                2.695-2.695C25.881 3.2 24.7 2 23.2 2 c-1.059 0-1.979 0.616-2.42 1.508l-4.633-1.091c-0.344-0.081-0.693 0.118-0.803 
+                0.455l-1.793 5.7 C10.548 8.6 7.7 9.4 5.6 10.75C5.006 10.3 4.3 10 3.5 10.029c-1.785 0-3.237 1.452-3.237 3.2 c0 1.1 0.6 
+                2.1 1.4 2.69c-0.04 0.272-0.061 0.551-0.061 0.831c0 2.3 1.3 4.4 3.7 5.9 c2.299 1.5 5.3 2.3 8.6 2.325c3.228 0 6.271-0.825 
+                8.571-2.325c2.387-1.56 3.7-3.66 3.7-5.917 c0-0.26-0.016-0.514-0.051-0.768C27.088 15.5 27.7 14.4 27.7 13.267z M23.186 
+                3.355c0.74 0 1.3 0.6 1.3 1.3 c0 0.738-0.6 1.34-1.34 1.34s-1.342-0.602-1.342-1.34C21.844 4 22.4 3.4 23.2 3.355z M1.648 
+                13.3 c0-1.038 0.844-1.882 1.882-1.882c0.31 0 0.6 0.1 0.9 0.209c-1.049 0.868-1.813 1.861-2.26 2.9 C1.832 14.2 1.6 13.8 1.6 
+                13.267z M21.773 21.57c-2.082 1.357-4.863 2.105-7.831 2.105c-2.967 0-5.747-0.748-7.828-2.105 
+                c-1.991-1.301-3.088-3-3.088-4.782c0-1.784 1.097-3.484 3.088-4.784c2.081-1.358 4.861-2.106 7.828-2.106 c2.967 0 5.7 
+                0.7 7.8 2.106c1.99 1.3 3.1 3 3.1 4.784C24.859 18.6 23.8 20.3 21.8 21.57z M25.787 14.6 
+                c-0.432-1.084-1.191-2.095-2.244-2.977c0.273-0.156 0.59-0.245 0.928-0.245c1.035 0 1.9 0.8 1.9 1.9 
+                C26.354 13.8 26.1 14.3 25.8 14.605z"></path></g></svg>
+            </span>
+            <span class="text">reddit</span>
+        </a>
+    </li>
+    <li data-size="55" data-initwidth="16.666666666666668" style="width: 42px;" class="googleplus small">
+        <!-- Replace href with your meta and URL information.  -->
+        <a href="https://plus.google.com/share?url=http%3a%2f%2fwww.codeproject.com%2fArticles%2f841776%2fAngularJS-ui-router" class="popup">
+            <span class="icon">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+                    <g>
+                        <g>
+                            <path d="M14.703,15.854l-1.219-0.948c-0.372-0.308-0.88-0.715-0.88-1.459c0-0.748,0.508-1.223,0.95-1.663
+                                c1.42-1.119,2.839-2.309,2.839-4.817c0-2.58-1.621-3.937-2.399-4.581h2.097l2.202-1.383h-6.67c-1.83,0-4.467,0.433-6.398,2.027
+                                C3.768,4.287,3.059,6.018,3.059,7.576c0,2.634,2.022,5.328,5.604,5.328c0.339,0,0.71-0.033,1.083-0.068
+                                c-0.167,0.408-0.336,0.748-0.336,1.324c0,1.04,0.551,1.685,1.011,2.297c-1.524,0.104-4.37,0.273-6.467,1.562
+                                c-1.998,1.188-2.605,2.916-2.605,4.137c0,2.512,2.358,4.84,7.289,4.84c5.822,0,8.904-3.223,8.904-6.41
+                                c0.008-2.327-1.359-3.489-2.829-4.731H14.703z M10.269,11.951c-2.912,0-4.231-3.765-4.231-6.037c0-0.884,0.168-1.797,0.744-2.511
+                                c0.543-0.679,1.489-1.12,2.372-1.12c2.807,0,4.256,3.798,4.256,6.242c0,0.612-0.067,1.694-0.845,2.478
+                                c-0.537,0.55-1.438,0.948-2.295,0.951V11.951z M10.302,25.609c-3.621,0-5.957-1.732-5.957-4.142c0-2.408,2.165-3.223,2.911-3.492
+                                c1.421-0.479,3.25-0.545,3.555-0.545c0.338,0,0.52,0,0.766,0.034c2.574,1.838,3.706,2.757,3.706,4.479
+                                c-0.002,2.073-1.736,3.665-4.982,3.649L10.302,25.609z"></path>
+                            <polygon points="23.254,11.89 23.254,8.521 21.569,8.521 21.569,11.89 18.202,11.89 18.202,13.604 21.569,13.604 21.569,17.004
+                                23.254,17.004 23.254,13.604 26.653,13.604 26.653,11.89      "></polygon>
+                        </g>
+                    </g>
+                </svg>
+            </span>
+            <span class="text">google+</span>
+        </a>
+    </li>
+    
+</ul>
+<!-- Buttons end here -->
+
+				        </div> 
+    			        
+
+
+						
+						<h2 id="ctl00_AboutHeading">About the Author</h2>
+						    
+
+
+<div class="author-wrapper">
+
+    <div class="pic-wrapper"> 
+        <img id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberPhoto" class="profile-pic" src="AngularJS%20ui-router%20-%20CodeProject_files/member_unknown.gif" style="border-width:0px;transform:rotate(1deg);">
+
+    </div>
+
+    <div class="container-member">  
+        <b><a id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberProfileLink" class="author" href="http://www.codeproject.com/Members/KameshKannan">KameshKannan</a></b>
+
+        <table class="extended">
+        <tbody><tr>
+            <td rowspan="2" nowrap="nowrap" valign="middle">
+            <div id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_FollowOn" class="follow">
+	            
+	            <a href="https://plus.google.com/+kameshmailgmailcom"><img style="vertical-align:middle;border:0;height:24px;width246px" alt="Google+" src="AngularJS%20ui-router%20-%20CodeProject_files/googleplus32.png"></a> 
+	            
+            </div>
+            </td>
+            <td width="100%">
+                <div class="company">
+                    <span id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberJobTitle">Software Developer (Senior)</span>
+	                <span id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberCompany"></span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberLocation">India <img src="AngularJS%20ui-router%20-%20CodeProject_files/IN.gif" alt="India" height="11px" width="16px"></span>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+    <div class="description">
+        No Biography provided
+
+        
+    </div>
+
+</div><br>
+						
+						
+
+						<div class="clearfix"></div>
+
+						<div style="padding-top:8px">
+							
+						</div>
+
+					
+
+				    
+					</form>
+
+				</div>
+
+				
+				<div class="bottom-promo"> 
+				    <div class="msg-728x90" data-format="728x90" data-type="ad" data-publisher="lqm.codeproject.site" data-zone="Web-Development/Applications-Tools/General" data-loadonview="true" data-tags="AngularJS,rating4.5,pos_bottom"><noscript><a href="http://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/Web-Development/Applications-Tools/General&sz=728x90&c=454754"><img src="http://pubads.g.doubleclick.net/gampad/ad?iu=/6839/lqm.codeproject.site/Web-Development/Applications-Tools/General&sz=728x90&c=454754"  width="728px" height="90px" target="_blank"/></a></noscript><div id="div-gpt-ad-lqm.codeproject.site/web-development/applications-tools/general-3" style="height: 90px; width: 728px; box-sizing: border-box; border: 0px none; font-size: 0px;"><div style="border: 0pt none;" id="google_ads_iframe_/6839/lqm.codeproject.site/web-development/applications-tools/general_3__container__"><iframe src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;" style="border: 0px none; vertical-align: bottom;" marginheight="0" marginwidth="0" scrolling="no" name="google_ads_iframe_/6839/lqm.codeproject.site/web-development/applications-tools/general_3" title="3rd party ad content" id="google_ads_iframe_/6839/lqm.codeproject.site/web-development/applications-tools/general_3" frameborder="0" height="90" width="728"></iframe></div><iframe src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;" style="border: 0px none; vertical-align: bottom; visibility: hidden; display: none;" marginheight="0" marginwidth="0" scrolling="no" name="google_ads_iframe_/6839/lqm.codeproject.site/web-development/applications-tools/general_3__hidden__" title="" id="google_ads_iframe_/6839/lqm.codeproject.site/web-development/applications-tools/general_3__hidden__" frameborder="0" height="0" width="0"></iframe></div></div>
+				</div>
+				
+
+                
+        <h2 id="ctl00_AlsoRead_RelatedResults_ctl00_Header" class="also-read">You may also be interested in...</h2>
+        <table class="spaced content-list also-read">
+    
+	    <tbody><tr>
+        <td class="content-list-item" valign="top" width="50%">
+            <div class="thumbnail"><a id="ctl00_AlsoRead_RelatedResults_ctl01_Thumbnail" href="http://www.codeproject.com/Articles/842880/AngularJS-ui-router-nested-routes"><img src="AngularJS%20ui-router%20-%20CodeProject_files/article100x80.png" alt="" style="border-width:0px;"></a></div>
+            <div class="text">
+                <div class="title"><a id="ctl00_AlsoRead_RelatedResults_ctl01_Link" href="http://www.codeproject.com/Articles/842880/AngularJS-ui-router-nested-routes">AngularJS ui-router (nested routes)</a></div>
+                
+            </div>
+        </td>
+	
+        <td class="content-list-item" valign="top" width="50%">
+            <div class="thumbnail"><a id="ctl00_AlsoRead_RelatedResults_ctl02_Thumbnail" href="http://www.codeproject.com/Articles/23/SAPrefs-Netscape-like-Preferences-Dialog"><img src="AngularJS%20ui-router%20-%20CodeProject_files/Thumb-23.gif" alt="" style="border-width:0px;"></a></div>
+            <div class="text">
+                <div class="title"><a id="ctl00_AlsoRead_RelatedResults_ctl02_Link" href="http://www.codeproject.com/Articles/23/SAPrefs-Netscape-like-Preferences-Dialog">SAPrefs - Netscape-like Preferences Dialog</a></div>
+                
+            </div>
+        </td>
+	    </tr>
+	
+	    <tr>
+        <td class="content-list-item" valign="top" width="50%">
+            <div class="thumbnail"><a id="ctl00_AlsoRead_RelatedResults_ctl03_Thumbnail" href="http://www.codeproject.com/Articles/874264/Introduction-to-AngularJS-and-WebAPI"><img src="AngularJS%20ui-router%20-%20CodeProject_files/Thumb-874264.png" alt="" style="border-width:0px;"></a></div>
+            <div class="text">
+                <div class="title"><a id="ctl00_AlsoRead_RelatedResults_ctl03_Link" href="http://www.codeproject.com/Articles/874264/Introduction-to-AngularJS-and-WebAPI">Introduction to AngularJS and WebAPI</a></div>
+                
+            </div>
+        </td>
+	
+        <td class="content-list-item" valign="top" width="50%">
+            <div class="thumbnail"><a id="ctl00_AlsoRead_RelatedResults_ctl04_Thumbnail" href="http://www.codeproject.com/Articles/47864/Generate-and-add-keyword-variations-using-AdWords"><img src="AngularJS%20ui-router%20-%20CodeProject_files/Thumb-47864.png" alt="" style="border-width:0px;"></a></div>
+            <div class="text">
+                <div class="title"><a id="ctl00_AlsoRead_RelatedResults_ctl04_Link" href="http://www.codeproject.com/Articles/47864/Generate-and-add-keyword-variations-using-AdWords">Generate and add keyword variations using AdWords API</a></div>
+                
+            </div>
+        </td>
+	    </tr>
+	
+	    <tr>
+        <td class="content-list-item" valign="top" width="50%">
+            <div class="thumbnail"><a id="ctl00_AlsoRead_RelatedResults_ctl05_Thumbnail" href="http://www.codeproject.com/Articles/873847/AngularJS-Routing-with-Loading-Bar"><img src="AngularJS%20ui-router%20-%20CodeProject_files/Thumb-873847.png" alt="" style="border-width:0px;"></a></div>
+            <div class="text">
+                <div class="title"><a id="ctl00_AlsoRead_RelatedResults_ctl05_Link" href="http://www.codeproject.com/Articles/873847/AngularJS-Routing-with-Loading-Bar">AngularJS: Routing with Loading Bar</a></div>
+                
+            </div>
+        </td>
+	
+        <td class="content-list-item" valign="top" width="50%">
+            <div class="thumbnail"><a id="ctl00_AlsoRead_RelatedResults_ctl06_Thumbnail" href="http://www.codeproject.com/Articles/107/Window-Tabs-WndTabs-Add-In-for-DevStudio"><img src="AngularJS%20ui-router%20-%20CodeProject_files/Thumb-107.jpg" alt="" style="border-width:0px;"></a></div>
+            <div class="text">
+                <div class="title"><a id="ctl00_AlsoRead_RelatedResults_ctl06_Link" href="http://www.codeproject.com/Articles/107/Window-Tabs-WndTabs-Add-In-for-DevStudio">Window Tabs (WndTabs) Add-In for DevStudio</a></div>
+                
+            </div>
+        </td>
+	    </tr>
+	
+		</tbody></table>
+	
+
+
+
+				
+				
+
+					<h2>Comments and Discussions</h2>
+					<a class="float-left" name="_comments" id="_comments">&nbsp;</a><div id="_MessageBoardctl00_MessageBoard" onclick="return SwitchMessage(event, null)">
+<table id="ForumTable" class="forum relaxed" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="header1 callout"><b>You must <a href="https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f841776%2fAngularJS-ui-router%3ffid%3d1873144">Sign In</a> to use this message board.</b></td>
+</tr><tr>
+<td><table border="0" cellpadding="3px" cellspacing="0" width="100%">
+<tbody><tr class="header1">
+<td colspan="2" style="white-space:nowrap;"><div class="container">
+<div class="float-right">
+<form action="/Search.aspx?sbo=fm" method="get" class="searchbar">
+<input name="fid" value="1873144" type="hidden"><input name="sbo" value="fm" type="hidden"><b>Search Comments </b><input class="search" name="qf" type="search">&nbsp;<input value="Go" class="button" type="submit">
+</form>
+</div>
+</div></td>
+</tr><tr class="header2">
+<td></td><td style="width:100%;"><div style="text-align:right;">
+<form action="/script/Forums/SetOptions.aspx?floc=%2fArticles%2f841776%2fAngularJS-ui-router&amp;fid=1873144" method="get" style="margin:0;padding:0;">
+<input name="fid" value="1873144" type="hidden"><input name="currentQS" value="?floc=%2fArticles%2f841776%2fAngularJS-ui-router&amp;fid=1873144" type="hidden"><input name="floc" value="/Articles/841776/AngularJS-ui-router" type="hidden"><input name="prof" id="prof" style="vertical-align:middle;" type="checkbox"><label for="prof">Profile popups</label>&nbsp;&nbsp;&nbsp;&nbsp;Spacing<select size="1" class="dropdown" name="spc">
+<option selected="selected" value="Relaxed">Relaxed</option><option value="Compact">Compact</option><option value="Tight">Tight</option>
+</select>&nbsp;&nbsp;Layout<select size="1" class="dropdown" name="view">
+<option selected="selected" value="Normal">Normal</option><option value="Topic">Open Topics</option><option value="Expanded">Open All</option><option value="Thread">Thread View</option>
+</select>&nbsp;&nbsp;Per page<select size="1" class="dropdown" name="mpp">
+<option value="10">10</option><option selected="selected" value="25">25</option><option value="50">50</option>
+</select>&nbsp;&nbsp;&nbsp;<input value="Update" name="SetOpt" class="button" type="submit">
+</form>
+</div></td>
+</tr>
+</tbody></table></td>
+</tr><tr>
+<td><a name="xx0xx"></a><table border="0" cellpadding="2px" cellspacing="0" width="100%">
+<tbody><tr class="navbar">
+<td></td><td style="text-align:right;width:50%;"></td><td style="text-align:right;white-space:nowrap;">&nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><tr>
+<td><table class="fixed-layout blank-background" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td><img src="AngularJS%20ui-router%20-%20CodeProject_files/t.gif" alt="" height="5px" border="0" width="1px"></td>
+</tr><tr>
+<td class="small-text" align="center">-- There are no messages in this forum --</td>
+</tr>
+</tbody></table></td>
+</tr><tr>
+<td><img src="AngularJS%20ui-router%20-%20CodeProject_files/t.gif" alt="" height="5px" border="0" width="1px"></td>
+</tr>
+</tbody></table>
+</div>
+				
+
+			</div>
+			
+		</td>
+		<td class="article-wing-right" width="170px">
+			<div id="ctl00_RightSideBar" class="container-article-info">
+
+                <div style="position: static; top: 233.133px; left: 1061.5px;" id="RHSticky" class="container-article-info-sticky">
+        			
+
+
+<div class="article-summary">
+
+    
+
+
+    
+
+    
+
+    
+</div>
+
+				    
+
+				    <div style="width:160px;margin: 10px auto;">
+					    <div class="msg-160x600" data-format="160x600" data-type="ad" data-publisher="lqm.codeproject.site" data-zone="Web-Development/Applications-Tools/General" data-tags="AngularJS,rating4.5"><noscript><a href="http://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/Web-Development/Applications-Tools/General&sz=160x600&c=454754"><img src="http://pubads.g.doubleclick.net/gampad/ad?iu=/6839/lqm.codeproject.site/Web-Development/Applications-Tools/General&sz=160x600&c=454754"  width="160px" height="600px" target="_blank"/></a></noscript><div id="div-gpt-ad-lqm.codeproject.site/web-development/applications-tools/general-4" style="height: 600px; width: 160px; box-sizing: border-box; border: 0px none; font-size: 0px;"><div style="border: 0pt none;" id="google_ads_iframe_/6839/lqm.codeproject.site/web-development/applications-tools/general_1__container__"><iframe src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;" style="border: 0px none; vertical-align: bottom;" marginheight="0" marginwidth="0" scrolling="no" name="google_ads_iframe_/6839/lqm.codeproject.site/web-development/applications-tools/general_1" title="3rd party ad content" id="google_ads_iframe_/6839/lqm.codeproject.site/web-development/applications-tools/general_1" frameborder="0" height="600" width="160"></iframe></div><iframe src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;" style="border: 0px none; vertical-align: bottom; visibility: hidden; display: none;" marginheight="0" marginwidth="0" scrolling="no" name="google_ads_iframe_/6839/lqm.codeproject.site/web-development/applications-tools/general_1__hidden__" title="" id="google_ads_iframe_/6839/lqm.codeproject.site/web-development/applications-tools/general_1__hidden__" frameborder="0" height="0" width="0"></iframe></div></div>
+				    </div>
+
+                    
+
+				    
+
+				    
+
+				    
+
+                    <div class="anchorLink gototop" id="gototop">
+                        <a id="ctl00_GoToTop" href="http://www.codeproject.com/Articles/841776/AngularJS-ui-router#_articleTop">Go to top</a>
+                    </div>
+
+				</div>
+
+			</div>
+		</td>
+		</tr></tbody></table>
+
+		
+		<div class="theme1-background" style="height:2px" id="stickyStop"></div>
+
+		<div class="extended tiny-text">
+			<div class="row">
+				<div class="float-left">
+					<a id="ctl00_PermaLink" itemprop="url" href="http://www.codeproject.com/Articles/841776/AngularJS-ui-router">Permalink</a> | 
+					<a id="ctl00_AdvertiseLink" href="http://developermedia.com/">Advertise </a> |
+					<a id="ctl00_PrivacyLink" href="http://www.codeproject.com/info/privacy.aspx">Privacy</a> |
+                    <a id="ctl00_TermsOfUseLink" href="http://www.codeproject.com/info/TermsOfUse.aspx">Terms of Use</a> |
+					<a id="ctl00_Mobile">Mobile</a>
+					<br>
+								
+					
+					Web02 |
+					2.8.160531.1 |
+					Last Updated 13 Nov 2014								
+				</div>
+
+                <div id="ctl00_GoogleTranslate" class="translate float-left"><div style="" dir="ltr" class="skiptranslate goog-te-gadget"><div class="goog-te-gadget-simple" style="white-space: nowrap;" id=":0.targetLanguage"><img style="background-image: url(&quot;https://translate.googleapis.com/translate_static/img/te_ctrl3.gif&quot;); background-position: -65px 0px;" class="goog-te-gadget-icon" src="AngularJS%20ui-router%20-%20CodeProject_files/cleardot.gif"><span style="vertical-align: middle;"><a href="javascript:void(0)" class="goog-te-menu-value"><span>Select Language</span><img src="AngularJS%20ui-router%20-%20CodeProject_files/cleardot.gif" height="1" width="1"><span style="border-left: 1px solid rgb(187, 187, 187);">​</span><img src="AngularJS%20ui-router%20-%20CodeProject_files/cleardot.gif" height="1" width="1"><span style="color: rgb(155, 155, 155);">▼</span></a></span></div></div></div>      
+
+				<div class="float-right align-right">
+					Article Copyright 2014 by KameshKannan<br>Everything else
+					Copyright © <a href="mailto:webmaster@codeproject.com">CodeProject</a>, 1999-2016 <br>
+				</div>
+
+				
+
+
+<div class="page-width">
+Layout: <a id="ctl00_PageWidth_FixedT" title="Fixed width layout" rel="nofollow" class=" active" href="http://www.codeproject.com/Articles/841776/AngularJS-ui-router?PageFlow=FixedWidth">fixed</a>
+|
+<a id="ctl00_PageWidth_FluidT" title="Fluid layout" rel="nofollow" href="http://www.codeproject.com/Articles/841776/AngularJS-ui-router?PageFlow=Fluid">fluid</a>
+</div>
+
+
+
+			</div>
+		</div>
+		
+
+		<br clear="all">
+		
+			
+
+	</div> 
+	</div>
+</div>
+
+
+
+
+
+
+<script type="text/javascript" language="Javascript" src="AngularJS%20ui-router%20-%20CodeProject_files/article.js"></script>
+<script type="text/javascript" language="Javascript" src="AngularJS%20ui-router%20-%20CodeProject_files/element.js"></script>
+<script type="text/javascript" language="Javascript" src="AngularJS%20ui-router%20-%20CodeProject_files/navbar.js"></script>
+<script type="text/javascript" language="Javascript" src="AngularJS%20ui-router%20-%20CodeProject_files/Notifications.js"></script>
+<script type="text/javascript" language="Javascript">//<![CDATA[
+$(document).ready(function () { processCodeBlocks.Initialise('#contentdiv'); });
+function googleTranslateElementInit() {  new google.translate.TranslateElement({   pageLanguage: 'en',   layout: google.translate.TranslateElement.InlineLayout.SIMPLE,   autoDisplay: false,   gaTrack: true,   gaId: 'UA-1735123-1'},  'ctl00_GoogleTranslate');}
+$(document).ready(function() { anchorAnimate();
+$('#RHSticky').sticky($('#stickyStop'));
+$('#ctl00_Nav').sticky($('#stickyStop'));
+});
+$(function ()
+                {
+                    $('.oauth').click(function () {
+                        $this = $(this);
+                        href = $this.attr('href');
+                        var myWindow = window.open(href, 'popup',
+                                    'width=800,height=600,location=0,menubar=0,resizeable=0,scrollbars=0,toolbar=0');
+                        myWindow.focus();
+                        var timer = setInterval(function () {
+                                        if (myWindow.closed) {
+                                            clearInterval(timer);
+                                            // window.location.reload(); // May do a POST reload, shows a warning
+                                            window.location = window.location; // force a GET reload
+                                        }
+                                    }, 200);
+                        return false;
+                    });
+                });
+var oSrchFlt = false, oSrchBox=false,srchBoxFoc=false;
+$(document).ready(function() {
+ if(InitWatermark)InitWatermark('sb_tb', 'Search for articles, questions, tips');
+ var sbar = $('#sb_tb'); 
+ var sfilter = $('#SearchFilter');
+ if (sbar && sfilter) {
+  sfilter.removeClass('popup'); sfilter.hide(); sfilter.removeClass('open');
+  sbar.blur(function() {
+ if (!oSrchFlt) {sfilter.hide(); sfilter.removeClass('open');}
+ srchBoxFoc=false;
+ });
+  sbar.focus(function() {
+ oSrchFlt=false; srchBoxFoc=true;
+ sfilter.show(); sfilter.addClass('open');
+ });
+  sbar.mouseleave(function() { oSrchBox=false; });
+  sbar.mouseover(function() { oSrchBox=true; });
+  sfilter.mouseleave(function() { oSrchFlt=false; if (!srchBoxFoc&&!oSrchBox) { sfilter.hide(); sfilter.removeClass('open'); }});
+  sfilter.mouseover(function() { oSrchFlt=true; });
+ }
+});
+$('#clear-rate_ctl00_RateArticle_RSU').click(function () {    $('#ctl00_RateArticle_RSU').hide(); return false;});$("#ctl00_RateArticle_RateItemWrapper")   .removeClass("container-rating")   .hover( function() { $('#ctl00_RateArticle_RSU').fadeIn('fast'); },            function() { $('#ctl00_RateArticle_RSU').fadeOut('fast'); } );
+function PostBack_ctl00_RateArticle_RateItemWrapper() {
+  return rateItem(841776,2,1,true,true,0,'LargeStars');
+}
+
+                        function getVotesHistogram(objectId, objectTypeId, containerId, loadingId) {
+                            if (!$('#' + containerId).attr('alreadyRequested')){
+                                $.ajax({
+                                    url: '/script/Ratings/Ajax/Histogram.aspx?obid=' + objectId + '&obtid='+objectTypeId,
+                                    success: function (data) {
+                                        $('#' + containerId).html(data);
+                                        $('#' + loadingId).hide();
+                                    }
+                                });
+                                $('#' + containerId).attr('alreadyRequested', 'true');
+                            }
+                        }
+$(document).ready(function() {   new starRating('#ctl00_RateArticle_VoteFormDiv', PostBack_ctl00_RateArticle_RateItemWrapper,'ctl00_RateArticle');
+  $('#ctl00_RateArticle_RB').mouseenter(function() {     getVotesHistogram(841776,2   ,'ctl00_RateArticle_Histogram','ctl00_RateArticle_Loading');  })})
+$(document).ready(function() { $('#ctl00_RateArticle_SubmitRateBtn').hide(); });
+$(document).ready(function() { $('#ctl00_RateArticle_SubmitRateBtn').hide(); });function ChkRtctl00_RateArticle(){}
+
+forumDir = '/script/Forums/';
+allowReporting = false;
+allowRating = false;
+allowRatingDisplay = true;
+var smoothScroll = false;
+Selected        = -1;
+oldTitle        = document.title;
+minMessageScore = 1;
+minMessageScore = 5;
+abuseScore      = -2;
+spamScore       = -1;
+getRatingUrl    = '/script/Ratings/Ajax/GetRatings.aspx';
+getRatingRefKey = 'obrs';
+
+
+//]]>
+</script>
+
+
+
+<canvas id="cv1" width="1px" height="1px" style="position:absolute;left:0;top:0;pointer-events:none"></canvas><div id="goog-gt-tt" class="skiptranslate" dir="ltr"><div style="padding: 8px;"><div><div class="logo"><img src="AngularJS%20ui-router%20-%20CodeProject_files/translate_24dp.png" height="20" width="20"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">Original text</h1></div><div class="middle" style="padding: 8px;"><div class="original-text"></div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">Contribute a better translation</span><span class="activity-link"></span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div style="display: none;" class="status-message"></div></div><canvas id="cv2" width="1px" height="1px" style="position:absolute;left:0;top:0;pointer-events:none"></canvas><iframe style="visibility: visible; box-sizing: content-box; width: 1022px; height: 273px; display: none;" class="goog-te-menu-frame skiptranslate" frameborder="0"></iframe><iframe style="display: none; width: 0px; height: 0px;" name="google_osd_static_frame" id="google_osd_static_frame_2448705062034"></iframe></body></html>
